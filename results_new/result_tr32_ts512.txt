@@ -1,0 +1,77 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_ULBP(svm): 50.00% (std=0.00%)
+F1 Score DCTraCS_ULBP(svm): 66.67% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 50.00% (std=0.00%)
+Accuracy DCTraCS_ULBP(rf): 50.00% (std=0.00%)
+F1 Score DCTraCS_ULBP(rf): 66.67% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 50.00% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_RLBP(svm): 50.00% (std=0.00%)
+F1 Score DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 50.00% (std=0.00%)
+Accuracy DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+F1 Score DCTraCS_RLBP(rf): 88.89% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Eerman(svm): 0.00% (std=0.00%)
+F1 Score Eerman(svm): 0.00% (std=0.00%)
+Recall Eerman(svm): 0.00% (std=0.00%)
+Accuracy Eerman(rf): 25.00% (std=0.00%)
+F1 Score Eerman(rf): 18.73% (std=0.00%)
+Recall Eerman(rf): 25.00% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Fahad(svm): 74.00% (std=0.00%)
+F1 Score Fahad(svm): 66.15% (std=0.00%)
+Recall Fahad(svm): 74.00% (std=0.00%)
+Accuracy Fahad(rf): 50.00% (std=0.00%)
+F1 Score Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 50.00% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Soysal(svm): 26.34% (std=0.00%)
+F1 Score Soysal(svm): 20.05% (std=0.00%)
+Recall Soysal(svm): 26.34% (std=0.00%)
+Accuracy Soysal(rf): 25.25% (std=0.00%)
+F1 Score Soysal(rf): 17.33% (std=0.00%)
+Recall Soysal(rf): 25.25% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Zhang(svm): 2.01% (std=0.00%)
+F1 Score Zhang(svm): 0.98% (std=0.00%)
+Recall Zhang(svm): 2.01% (std=0.00%)
+Accuracy Zhang(rf): 27.51% (std=0.00%)
+F1 Score Zhang(rf): 22.75% (std=0.00%)
+Recall Zhang(rf): 27.51% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_RLBP(rf)
+
+299	0	0	0	
+0	0	299	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_ULBP(rf): 0.00832821
+Zhang(rf): 0.00404819
+DCTraCS_RLBP(rf): 0.00813501
+Fahad(rf): 0.00393227
+Soysal(rf): 0.00409871
+Eerman(rf): 0.00427408
+DCTraCS_ULBP(svm): 0.14393649
+Zhang(svm): 0.62236548
+DCTraCS_RLBP(svm): 0.23768974
+Fahad(svm): 0.52134512
+Soysal(svm): 1.00000000
+Eerman(svm): 0.43954620

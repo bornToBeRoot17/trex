@@ -1,0 +1,77 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Recall DCTraCS_RLBP(svm): 0.9448160535117057
+F1-Score DCTraCS_RLBP(svm): 0.9448160535117057
+
+Recall DCTraCS_RLBP(rf): 0.2842809364548495
+F1-Score DCTraCS_RLBP(rf): 0.2842809364548495
+
+
+Cross validation (max=1): [ 1 ]
+Recall DCTraCS_ULBP(svm): 0.68561872909699
+F1-Score DCTraCS_ULBP(svm): 0.68561872909699
+
+Recall DCTraCS_ULBP(rf): 0.6095317725752508
+F1-Score DCTraCS_ULBP(rf): 0.6095317725752508
+
+
+Cross validation (max=1): [ 1 ]
+Recall Eerman(svm): 0.25
+F1-Score Eerman(svm): 0.25
+
+Recall Eerman(rf): 0.25
+F1-Score Eerman(rf): 0.25
+
+
+Cross validation (max=1): [ 1 ]
+Recall Fahad(svm): 0.5183946488294314
+F1-Score Fahad(svm): 0.5183946488294314
+
+Recall Fahad(rf): 0.25
+F1-Score Fahad(rf): 0.25
+
+
+Cross validation (max=1): [ 1 ]
+Recall Soysal(svm): 0.25
+F1-Score Soysal(svm): 0.25
+
+Recall Soysal(rf): 0.25
+F1-Score Soysal(rf): 0.25
+
+
+Cross validation (max=1): [ 1 ]
+Recall Zhang(svm): 0.25
+F1-Score Zhang(svm): 0.25
+
+Recall Zhang(rf): 0.25
+F1-Score Zhang(rf): 0.25
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_RLBP(svm)
+
+298	1	0	0	
+3	296	0	0	
+0	62	237	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Zhang(svm): 0.71103455
+DCTraCS_ULBP(svm): 0.11278184
+Fahad(svm): 0.49785428
+Soysal(rf): 0.00499312
+Eerman(svm): 0.38369918
+DCTraCS_ULBP(rf): 0.01183231
+Fahad(rf): 0.00501119
+Eerman(rf): 0.00538462
+DCTraCS_RLBP(rf): 0.01236234
+Soysal(svm): 1.00000000
+DCTraCS_RLBP(svm): 0.10630103
+Zhang(rf): 0.00500818

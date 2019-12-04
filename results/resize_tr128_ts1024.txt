@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.75
+F1-Score DCTraCS_RLBP(svm): 0.75
+
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.75
+F1-Score DCTraCS_RLBP(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.75
+F1-Score DCTraCS_ULBP(svm): 0.75
+
+DCTraCS_ULBP(rf): 50.00% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.5
+F1-Score DCTraCS_ULBP(rf): 0.5
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 49.58% (std=0.00%)
+Recall Eerman(svm): 0.49581939799331104
+F1-Score Eerman(svm): 0.49581939799331104
+
+Eerman(rf): 49.58% (std=0.00%)
+Recall Eerman(rf): 0.49581939799331104
+F1-Score Eerman(rf): 0.49581939799331104
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 50.00% (std=0.00%)
+Recall Fahad(rf): 0.5
+F1-Score Fahad(rf): 0.5
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 28.60% (std=0.00%)
+Recall Soysal(svm): 0.28595317725752506
+F1-Score Soysal(svm): 0.28595317725752506
+
+Soysal(rf): 44.57% (std=0.00%)
+Recall Soysal(rf): 0.44565217391304346
+F1-Score Soysal(rf): 0.44565217391304346
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 44.90% (std=0.00%)
+Recall Zhang(svm): 0.4489966555183946
+F1-Score Zhang(svm): 0.4489966555183946
+
+Zhang(rf): 44.57% (std=0.00%)
+Recall Zhang(rf): 0.44565217391304346
+F1-Score Zhang(rf): 0.44565217391304346
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	0	299	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_ULBP(svm): 0.11118079
+DCTraCS_RLBP(rf): 0.00814118
+Soysal(rf): 0.00397388
+Zhang(svm): 0.69855932
+DCTraCS_RLBP(svm): 0.11804424
+Fahad(rf): 0.00394458
+Zhang(rf): 0.00399147
+Eerman(rf): 0.00417609
+Fahad(svm): 0.49521727
+Soysal(svm): 1.00000000
+Eerman(svm): 0.28054556
+DCTraCS_ULBP(rf): 0.00795070

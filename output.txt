@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "test.py", line 121, in <module>
+    main()
+  File "test.py", line 117, in main
+    classify(X_train, y_train, X_test_split, y_test_split, num)
+  File "test.py", line 67, in classify
+    pred = int(clf.predict(X_test[start+i]))
+  File "/nobackup/ppginf/rgcastro/research/env3/lib/python3.6/site-packages/sklearn/svm/base.py", line 574, in predict
+    y = super().predict(X)
+  File "/nobackup/ppginf/rgcastro/research/env3/lib/python3.6/site-packages/sklearn/svm/base.py", line 322, in predict
+    X = self._validate_for_predict(X)
+  File "/nobackup/ppginf/rgcastro/research/env3/lib/python3.6/site-packages/sklearn/svm/base.py", line 454, in _validate_for_predict
+    accept_large_sparse=False)
+  File "/nobackup/ppginf/rgcastro/research/env3/lib/python3.6/site-packages/sklearn/utils/validation.py", line 521, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[255.  25.  51. ...  76.  25. 255.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.

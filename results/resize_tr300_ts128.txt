@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 93.98% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.939799331103679
+F1-Score DCTraCS_RLBP(rf): 0.939799331103679
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 99.92% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.9991638795986622
+F1-Score DCTraCS_ULBP(svm): 0.9991638795986622
+
+DCTraCS_ULBP(rf): 97.07% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9707357859531772
+F1-Score DCTraCS_ULBP(rf): 0.9707357859531772
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 64.13% (std=0.00%)
+Recall Eerman(svm): 0.6413043478260869
+F1-Score Eerman(svm): 0.6413043478260869
+
+Eerman(rf): 42.47% (std=0.00%)
+Recall Eerman(rf): 0.42474916387959866
+F1-Score Eerman(rf): 0.42474916387959866
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 75.00% (std=0.00%)
+Recall Soysal(svm): 0.75
+F1-Score Soysal(svm): 0.75
+
+Soysal(rf): 71.82% (std=0.00%)
+Recall Soysal(rf): 0.7182274247491639
+F1-Score Soysal(rf): 0.718227424749164
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 46.82% (std=0.00%)
+Recall Zhang(svm): 0.4682274247491639
+F1-Score Zhang(svm): 0.4682274247491639
+
+Zhang(rf): 71.82% (std=0.00%)
+Recall Zhang(rf): 0.7182274247491639
+F1-Score Zhang(rf): 0.718227424749164
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	1	298	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Zhang(svm): 0.69815229
+Soysal(svm): 1.00000000
+Eerman(rf): 0.00444371
+DCTraCS_RLBP(rf): 0.00823827
+Soysal(rf): 0.00400701
+DCTraCS_RLBP(svm): 0.09952612
+Fahad(svm): 0.50858940
+Eerman(svm): 0.40682962
+DCTraCS_ULBP(rf): 0.00806713
+DCTraCS_ULBP(svm): 0.09883567
+Zhang(rf): 0.00397750
+Fahad(rf): 0.00390374

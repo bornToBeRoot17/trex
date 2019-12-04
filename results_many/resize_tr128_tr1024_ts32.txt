@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 99.67% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.9966555183946488
+F1-Score DCTraCS_RLBP(svm): 0.9966555183946488
+
+DCTraCS_RLBP(rf): 93.81% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9381270903010034
+F1-Score DCTraCS_RLBP(rf): 0.9381270903010034
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 74.33% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.7433110367892977
+F1-Score DCTraCS_ULBP(svm): 0.7433110367892977
+
+DCTraCS_ULBP(rf): 85.95% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.8595317725752508
+F1-Score DCTraCS_ULBP(rf): 0.8595317725752509
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 50.00% (std=0.00%)
+Recall Eerman(svm): 0.5
+F1-Score Eerman(svm): 0.5
+
+Eerman(rf): 41.72% (std=0.00%)
+Recall Eerman(rf): 0.41722408026755853
+F1-Score Eerman(rf): 0.4172240802675586
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 74.33% (std=0.00%)
+Recall Fahad(svm): 0.7433110367892977
+F1-Score Fahad(svm): 0.7433110367892977
+
+Fahad(rf): 50.00% (std=0.00%)
+Recall Fahad(rf): 0.5
+F1-Score Fahad(rf): 0.5
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 50.00% (std=0.00%)
+Recall Soysal(svm): 0.5
+F1-Score Soysal(svm): 0.5
+
+Soysal(rf): 25.00% (std=0.00%)
+Recall Soysal(rf): 0.25
+F1-Score Soysal(rf): 0.25
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 25.00% (std=0.00%)
+Recall Zhang(svm): 0.25
+F1-Score Zhang(svm): 0.25
+
+Zhang(rf): 25.00% (std=0.00%)
+Recall Zhang(rf): 0.25
+F1-Score Zhang(rf): 0.25
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+294	5	0	0	
+0	299	0	0	
+0	3	296	0	
+299	0	0	0	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_ULBP(svm): 0.12194755
+Zhang(svm): 0.73320898
+Zhang(rf): 0.00282170
+DCTraCS_ULBP(rf): 0.00596145
+Soysal(rf): 0.00289906
+Soysal(svm): 1.00000000
+Fahad(svm): 0.51773714
+Eerman(svm): 0.41070396
+DCTraCS_RLBP(svm): 0.09329648
+DCTraCS_RLBP(rf): 0.00599369
+Eerman(rf): 0.00313546
+Fahad(rf): 0.00288187

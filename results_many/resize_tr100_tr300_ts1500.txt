@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.75
+F1-Score DCTraCS_RLBP(svm): 0.75
+
+DCTraCS_RLBP(rf): 96.40% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9640468227424749
+F1-Score DCTraCS_RLBP(rf): 0.9640468227424749
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.75
+F1-Score DCTraCS_ULBP(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 4.35% (std=0.00%)
+Recall Eerman(svm): 0.043478260869565216
+F1-Score Eerman(svm): 0.043478260869565216
+
+Eerman(rf): 29.10% (std=0.00%)
+Recall Eerman(rf): 0.2909698996655518
+F1-Score Eerman(rf): 0.2909698996655518
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 50.00% (std=0.00%)
+Recall Fahad(rf): 0.5
+F1-Score Fahad(rf): 0.5
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 29.18% (std=0.00%)
+Recall Soysal(svm): 0.29180602006688966
+F1-Score Soysal(svm): 0.29180602006688966
+
+Soysal(rf): 27.59% (std=0.00%)
+Recall Soysal(rf): 0.27591973244147155
+F1-Score Soysal(rf): 0.27591973244147155
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 38.88% (std=0.00%)
+Recall Zhang(svm): 0.3887959866220736
+F1-Score Zhang(svm): 0.3887959866220736
+
+Zhang(rf): 38.88% (std=0.00%)
+Recall Zhang(rf): 0.3887959866220736
+F1-Score Zhang(rf): 0.3887959866220736
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Zhang(rf): 0.00299619
+DCTraCS_RLBP(rf): 0.00599451
+DCTraCS_ULBP(rf): 0.00594097
+Zhang(svm): 0.73042467
+Eerman(svm): 0.38651224
+DCTraCS_RLBP(svm): 0.11586822
+DCTraCS_ULBP(svm): 0.07594977
+Fahad(svm): 0.51211431
+Eerman(rf): 0.00313754
+Soysal(rf): 0.00296406
+Fahad(rf): 0.00300475
+Soysal(svm): 1.00000000

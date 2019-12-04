@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 99.41% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9941471571906354
+F1-Score DCTraCS_RLBP(rf): 0.9941471571906354
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 99.92% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.9991638795986622
+F1-Score DCTraCS_ULBP(svm): 0.9991638795986622
+
+DCTraCS_ULBP(rf): 99.00% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9899665551839465
+F1-Score DCTraCS_ULBP(rf): 0.9899665551839465
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 50.00% (std=0.00%)
+Recall Eerman(svm): 0.5
+F1-Score Eerman(svm): 0.5
+
+Eerman(rf): 24.25% (std=0.00%)
+Recall Eerman(rf): 0.24247491638795987
+F1-Score Eerman(rf): 0.24247491638795987
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 58.11% (std=0.00%)
+Recall Soysal(svm): 0.5811036789297659
+F1-Score Soysal(svm): 0.5811036789297659
+
+Soysal(rf): 32.69% (std=0.00%)
+Recall Soysal(rf): 0.3269230769230769
+F1-Score Soysal(rf): 0.3269230769230769
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 47.58% (std=0.00%)
+Recall Zhang(svm): 0.47575250836120403
+F1-Score Zhang(svm): 0.47575250836120403
+
+Zhang(rf): 37.29% (std=0.00%)
+Recall Zhang(rf): 0.3729096989966555
+F1-Score Zhang(rf): 0.3729096989966555
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	1	298	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_RLBP(rf): 0.00605033
+DCTraCS_ULBP(svm): 0.11118496
+Eerman(svm): 0.45925677
+Soysal(svm): 1.00000000
+Soysal(rf): 0.00307876
+DCTraCS_ULBP(rf): 0.00591311
+Zhang(rf): 0.00303588
+Fahad(rf): 0.00292225
+Fahad(svm): 0.52485201
+Eerman(rf): 0.00342823
+Zhang(svm): 0.89934201
+DCTraCS_RLBP(svm): 0.15979341

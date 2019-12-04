@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 99.75% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.9974916387959866
+F1-Score DCTraCS_RLBP(svm): 0.9974916387959866
+
+DCTraCS_RLBP(rf): 91.22% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9122073578595318
+F1-Score DCTraCS_RLBP(rf): 0.9122073578595318
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 74.50% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.7449832775919732
+F1-Score DCTraCS_ULBP(svm): 0.7449832775919732
+
+DCTraCS_ULBP(rf): 87.29% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.8729096989966555
+F1-Score DCTraCS_ULBP(rf): 0.8729096989966555
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 25.08% (std=0.00%)
+Recall Eerman(svm): 0.2508361204013378
+F1-Score Eerman(svm): 0.2508361204013378
+
+Eerman(rf): 25.00% (std=0.00%)
+Recall Eerman(rf): 0.25
+F1-Score Eerman(rf): 0.25
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 74.33% (std=0.00%)
+Recall Fahad(svm): 0.7433110367892977
+F1-Score Fahad(svm): 0.7433110367892977
+
+Fahad(rf): 50.00% (std=0.00%)
+Recall Fahad(rf): 0.5
+F1-Score Fahad(rf): 0.5
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 50.00% (std=0.00%)
+Recall Soysal(svm): 0.5
+F1-Score Soysal(svm): 0.5
+
+Soysal(rf): 25.00% (std=0.00%)
+Recall Soysal(rf): 0.25
+F1-Score Soysal(rf): 0.25
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 25.00% (std=0.00%)
+Recall Zhang(svm): 0.25
+F1-Score Zhang(svm): 0.25
+
+Zhang(rf): 25.00% (std=0.00%)
+Recall Zhang(rf): 0.25
+F1-Score Zhang(rf): 0.25
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+294	5	0	0	
+0	299	0	0	
+0	1	298	0	
+299	0	0	0	
+
+
+Fig. 8. Normalized classification time.
+
+Eerman(svm): 0.47348624
+DCTraCS_ULBP(rf): 0.00594163
+DCTraCS_RLBP(rf): 0.00613847
+Fahad(svm): 0.50515426
+Eerman(rf): 0.00303821
+DCTraCS_RLBP(svm): 0.09243014
+Fahad(rf): 0.00285421
+Soysal(rf): 0.00291198
+Zhang(svm): 0.72239719
+DCTraCS_ULBP(svm): 0.08012752
+Soysal(svm): 1.00000000
+Zhang(rf): 0.00286491

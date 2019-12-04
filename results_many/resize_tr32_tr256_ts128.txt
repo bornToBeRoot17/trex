@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 99.75% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9974916387959866
+F1-Score DCTraCS_RLBP(rf): 0.9974916387959866
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 99.67% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9966555183946488
+F1-Score DCTraCS_ULBP(rf): 0.9966555183946488
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 50.00% (std=0.00%)
+Recall Eerman(svm): 0.5
+F1-Score Eerman(svm): 0.5
+
+Eerman(rf): 46.74% (std=0.00%)
+Recall Eerman(rf): 0.4673913043478261
+F1-Score Eerman(rf): 0.4673913043478261
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 47.83% (std=0.00%)
+Recall Soysal(svm): 0.4782608695652174
+F1-Score Soysal(svm): 0.4782608695652174
+
+Soysal(rf): 68.14% (std=0.00%)
+Recall Soysal(rf): 0.681438127090301
+F1-Score Soysal(rf): 0.681438127090301
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 50.00% (std=0.00%)
+Recall Zhang(svm): 0.5
+F1-Score Zhang(svm): 0.5
+
+Zhang(rf): 72.07% (std=0.00%)
+Recall Zhang(rf): 0.7207357859531772
+F1-Score Zhang(rf): 0.7207357859531773
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Fahad(svm): 0.53013908
+Eerman(svm): 0.48391300
+Eerman(rf): 0.00324428
+DCTraCS_ULBP(svm): 0.10788881
+Zhang(rf): 0.00301638
+DCTraCS_ULBP(rf): 0.00590591
+Fahad(rf): 0.00296693
+DCTraCS_RLBP(svm): 0.15546507
+Soysal(svm): 1.00000000
+DCTraCS_RLBP(rf): 0.00602416
+Soysal(rf): 0.00302498
+Zhang(svm): 0.90608371

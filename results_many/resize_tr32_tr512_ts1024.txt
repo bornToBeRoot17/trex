@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 99.08% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.9908026755852842
+F1-Score DCTraCS_RLBP(svm): 0.9908026755852842
+
+DCTraCS_RLBP(rf): 98.66% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9866220735785953
+F1-Score DCTraCS_RLBP(rf): 0.9866220735785953
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 96.07% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9607023411371237
+F1-Score DCTraCS_ULBP(rf): 0.9607023411371237
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 50.00% (std=0.00%)
+Recall Eerman(svm): 0.5
+F1-Score Eerman(svm): 0.5
+
+Eerman(rf): 75.00% (std=0.00%)
+Recall Eerman(rf): 0.75
+F1-Score Eerman(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 25.00% (std=0.00%)
+Recall Soysal(svm): 0.25
+F1-Score Soysal(svm): 0.25
+
+Soysal(rf): 53.85% (std=0.00%)
+Recall Soysal(rf): 0.5384615384615384
+F1-Score Soysal(rf): 0.5384615384615384
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 37.88% (std=0.00%)
+Recall Zhang(svm): 0.3787625418060201
+F1-Score Zhang(svm): 0.3787625418060201
+
+Zhang(rf): 53.85% (std=0.00%)
+Recall Zhang(rf): 0.5384615384615384
+F1-Score Zhang(rf): 0.5384615384615384
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Zhang(rf): 0.00299529
+DCTraCS_RLBP(rf): 0.00608058
+DCTraCS_RLBP(svm): 0.14304355
+Soysal(rf): 0.00296101
+Soysal(svm): 1.00000000
+Eerman(svm): 0.47468783
+Zhang(svm): 0.90464335
+Fahad(svm): 0.52798180
+Fahad(rf): 0.00288602
+DCTraCS_ULBP(svm): 0.11758782
+DCTraCS_ULBP(rf): 0.00585989
+Eerman(rf): 0.00313242

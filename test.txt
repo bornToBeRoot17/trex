@@ -1,0 +1,19 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+F1-Score DCTraCS_ULBP(svm): 42.86% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 37.50% (std=0.00%)
+Accuracy DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+F1-Score DCTraCS_ULBP(rf): 42.86% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 37.50% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+F1-Score DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Accuracy DCTraCS_RLBP(rf): 100.00% (std=0.00%)
+F1-Score DCTraCS_RLBP(rf): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 100.00% (std=0.00%)

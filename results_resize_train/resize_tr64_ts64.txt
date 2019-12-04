@@ -1,0 +1,53 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+DCTraCS_ULBP(rf): 100.00% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+DCTraCS_RLBP(rf): 100.00% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 73.75% (std=0.00%)
+Eerman(rf): 87.67% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 86.75% (std=0.00%)
+Fahad(rf): 77.58% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 61.92% (std=0.00%)
+Soysal(rf): 68.92% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 70.75% (std=0.00%)
+Zhang(rf): 96.92% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+300	0	0	0	
+0	300	0	0	
+0	0	300	0	
+0	0	0	300	
+
+
+Fig. 8. Normalized classification time.
+
+Eerman(rf): 0.00603321
+Soysal(svm): 1.00000000
+Fahad(svm): 0.52250705
+DCTraCS_RLBP(svm): 0.18033131
+Zhang(rf): 0.00530012
+Zhang(svm): 0.74859737
+DCTraCS_ULBP(svm): 0.14895328
+DCTraCS_RLBP(rf): 0.00809355
+DCTraCS_ULBP(rf): 0.00827978
+Fahad(rf): 0.00404973
+Soysal(rf): 0.00509616
+Eerman(svm): 0.68592999

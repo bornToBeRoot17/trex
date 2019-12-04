@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 99.58% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.995819397993311
+F1-Score DCTraCS_RLBP(rf): 0.995819397993311
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 99.41% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9941471571906354
+F1-Score DCTraCS_ULBP(rf): 0.9941471571906354
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 43.06% (std=0.00%)
+Recall Eerman(svm): 0.4306020066889632
+F1-Score Eerman(svm): 0.4306020066889632
+
+Eerman(rf): 47.41% (std=0.00%)
+Recall Eerman(rf): 0.47408026755852845
+F1-Score Eerman(rf): 0.47408026755852845
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 33.70% (std=0.00%)
+Recall Soysal(svm): 0.33695652173913043
+F1-Score Soysal(svm): 0.33695652173913043
+
+Soysal(rf): 49.08% (std=0.00%)
+Recall Soysal(rf): 0.4908026755852843
+F1-Score Soysal(rf): 0.4908026755852843
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 50.00% (std=0.00%)
+Recall Zhang(svm): 0.5
+F1-Score Zhang(svm): 0.5
+
+Zhang(rf): 49.50% (std=0.00%)
+Recall Zhang(rf): 0.49498327759197325
+F1-Score Zhang(rf): 0.49498327759197325
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Zhang(svm): 0.90772768
+Soysal(rf): 0.00298407
+DCTraCS_RLBP(svm): 0.15195167
+DCTraCS_ULBP(svm): 0.10921714
+Zhang(rf): 0.00299910
+Soysal(svm): 1.00000000
+DCTraCS_RLBP(rf): 0.00613775
+Fahad(rf): 0.00299266
+Eerman(rf): 0.00319446
+Fahad(svm): 0.53201333
+DCTraCS_ULBP(rf): 0.00589086
+Eerman(svm): 0.45472149

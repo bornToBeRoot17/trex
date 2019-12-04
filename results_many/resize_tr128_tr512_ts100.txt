@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 99.83% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9983277591973244
+F1-Score DCTraCS_RLBP(rf): 0.9983277591973244
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 98.91% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9891304347826086
+F1-Score DCTraCS_ULBP(rf): 0.9891304347826086
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 73.08% (std=0.00%)
+Recall Eerman(svm): 0.7307692307692307
+F1-Score Eerman(svm): 0.7307692307692306
+
+Eerman(rf): 55.85% (std=0.00%)
+Recall Eerman(rf): 0.5585284280936454
+F1-Score Eerman(rf): 0.5585284280936454
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 73.91% (std=0.00%)
+Recall Fahad(rf): 0.7391304347826086
+F1-Score Fahad(rf): 0.7391304347826085
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 73.91% (std=0.00%)
+Recall Soysal(svm): 0.7391304347826086
+F1-Score Soysal(svm): 0.7391304347826085
+
+Soysal(rf): 73.91% (std=0.00%)
+Recall Soysal(rf): 0.7391304347826086
+F1-Score Soysal(rf): 0.7391304347826085
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 48.41% (std=0.00%)
+Recall Zhang(svm): 0.48411371237458195
+F1-Score Zhang(svm): 0.48411371237458195
+
+Zhang(rf): 73.91% (std=0.00%)
+Recall Zhang(rf): 0.7391304347826086
+F1-Score Zhang(rf): 0.7391304347826085
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_RLBP(svm): 0.09283703
+DCTraCS_RLBP(rf): 0.00606907
+Soysal(rf): 0.00289484
+Zhang(svm): 0.72399046
+DCTraCS_ULBP(svm): 0.08042380
+Fahad(svm): 0.50968602
+Eerman(svm): 0.47245707
+Eerman(rf): 0.00303669
+DCTraCS_ULBP(rf): 0.00585201
+Zhang(rf): 0.00284112
+Fahad(rf): 0.00295932
+Soysal(svm): 1.00000000

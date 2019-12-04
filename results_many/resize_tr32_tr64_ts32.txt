@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 98.60% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9859550561797753
+F1-Score DCTraCS_RLBP(rf): 0.9859550561797753
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 96.63% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9662921348314607
+F1-Score DCTraCS_ULBP(rf): 0.9662921348314607
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 84.83% (std=0.00%)
+Recall Eerman(svm): 0.848314606741573
+F1-Score Eerman(svm): 0.848314606741573
+
+Eerman(rf): 99.16% (std=0.00%)
+Recall Eerman(rf): 0.9915730337078652
+F1-Score Eerman(rf): 0.9915730337078652
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 76.12% (std=0.00%)
+Recall Fahad(svm): 0.7612359550561798
+F1-Score Fahad(svm): 0.7612359550561798
+
+Fahad(rf): 100.00% (std=0.00%)
+Recall Fahad(rf): 1.0
+F1-Score Fahad(rf): 1.0
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 50.00% (std=0.00%)
+Recall Soysal(svm): 0.5
+F1-Score Soysal(svm): 0.5
+
+Soysal(rf): 97.75% (std=0.00%)
+Recall Soysal(rf): 0.9775280898876404
+F1-Score Soysal(rf): 0.9775280898876404
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 60.96% (std=0.00%)
+Recall Zhang(svm): 0.6095505617977528
+F1-Score Zhang(svm): 0.6095505617977528
+
+Zhang(rf): 98.03% (std=0.00%)
+Recall Zhang(rf): 0.9803370786516854
+F1-Score Zhang(rf): 0.9803370786516854
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+89	0	0	0	
+0	89	0	0	
+0	0	89	0	
+0	0	0	89	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_RLBP(rf): 0.01205073
+Fahad(rf): 0.00835062
+Zhang(rf): 0.00896005
+Zhang(svm): 0.88594977
+DCTraCS_ULBP(rf): 0.01179680
+Fahad(svm): 0.51081736
+Soysal(rf): 0.00877868
+DCTraCS_RLBP(svm): 0.16059898
+Soysal(svm): 1.00000000
+Eerman(rf): 0.00896731
+Eerman(svm): 0.37837544
+DCTraCS_ULBP(svm): 0.10902245

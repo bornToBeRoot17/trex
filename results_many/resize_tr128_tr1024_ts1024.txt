@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 99.72% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9971910112359551
+F1-Score DCTraCS_RLBP(rf): 0.9971910112359551
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 99.72% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9971910112359551
+F1-Score DCTraCS_ULBP(rf): 0.9971910112359551
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 87.36% (std=0.00%)
+Recall Eerman(svm): 0.8735955056179775
+F1-Score Eerman(svm): 0.8735955056179776
+
+Eerman(rf): 99.16% (std=0.00%)
+Recall Eerman(rf): 0.9915730337078652
+F1-Score Eerman(rf): 0.9915730337078652
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 41.85% (std=0.00%)
+Recall Soysal(svm): 0.41853932584269665
+F1-Score Soysal(svm): 0.41853932584269665
+
+Soysal(rf): 50.28% (std=0.00%)
+Recall Soysal(rf): 0.5028089887640449
+F1-Score Soysal(rf): 0.5028089887640449
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 50.00% (std=0.00%)
+Recall Zhang(svm): 0.5
+F1-Score Zhang(svm): 0.5
+
+Zhang(rf): 98.88% (std=0.00%)
+Recall Zhang(rf): 0.9887640449438202
+F1-Score Zhang(rf): 0.9887640449438202
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+89	0	0	0	
+0	89	0	0	
+0	0	89	0	
+0	0	0	89	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_ULBP(svm): 0.12375130
+Zhang(rf): 0.00820349
+Soysal(svm): 1.00000000
+DCTraCS_ULBP(rf): 0.01125333
+DCTraCS_RLBP(rf): 0.01171221
+Fahad(rf): 0.00804112
+Soysal(rf): 0.00818937
+DCTraCS_RLBP(svm): 0.09554738
+Fahad(svm): 0.49498401
+Eerman(svm): 0.41525059
+Eerman(rf): 0.00840823
+Zhang(svm): 0.71102106

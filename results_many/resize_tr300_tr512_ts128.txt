@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 92.39% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9239130434782609
+F1-Score DCTraCS_RLBP(rf): 0.9239130434782609
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 99.92% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.9991638795986622
+F1-Score DCTraCS_ULBP(svm): 0.9991638795986622
+
+DCTraCS_ULBP(rf): 93.73% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9372909698996655
+F1-Score DCTraCS_ULBP(rf): 0.9372909698996655
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 69.65% (std=0.00%)
+Recall Eerman(svm): 0.6964882943143813
+F1-Score Eerman(svm): 0.6964882943143813
+
+Eerman(rf): 42.47% (std=0.00%)
+Recall Eerman(rf): 0.42474916387959866
+F1-Score Eerman(rf): 0.42474916387959866
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 71.82% (std=0.00%)
+Recall Fahad(rf): 0.7182274247491639
+F1-Score Fahad(rf): 0.718227424749164
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 74.58% (std=0.00%)
+Recall Soysal(svm): 0.745819397993311
+F1-Score Soysal(svm): 0.745819397993311
+
+Soysal(rf): 71.82% (std=0.00%)
+Recall Soysal(rf): 0.7182274247491639
+F1-Score Soysal(rf): 0.718227424749164
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 46.82% (std=0.00%)
+Recall Zhang(svm): 0.4682274247491639
+F1-Score Zhang(svm): 0.4682274247491639
+
+Zhang(rf): 71.82% (std=0.00%)
+Recall Zhang(rf): 0.7182274247491639
+F1-Score Zhang(rf): 0.718227424749164
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	1	298	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Soysal(rf): 0.00292360
+Fahad(rf): 0.00306282
+DCTraCS_RLBP(svm): 0.08014736
+DCTraCS_ULBP(rf): 0.00603354
+DCTraCS_RLBP(rf): 0.00597143
+Zhang(rf): 0.00287006
+DCTraCS_ULBP(svm): 0.08203645
+Zhang(svm): 0.70738718
+Eerman(svm): 0.54278524
+Fahad(svm): 0.50168562
+Eerman(rf): 0.00304354
+Soysal(svm): 1.00000000

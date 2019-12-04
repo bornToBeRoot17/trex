@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 99.25% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9924749163879598
+F1-Score DCTraCS_RLBP(rf): 0.9924749163879598
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 98.58% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9857859531772575
+F1-Score DCTraCS_ULBP(rf): 0.9857859531772575
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 25.00% (std=0.00%)
+Recall Eerman(svm): 0.25
+F1-Score Eerman(svm): 0.25
+
+Eerman(rf): 22.49% (std=0.00%)
+Recall Eerman(rf): 0.2249163879598662
+F1-Score Eerman(rf): 0.2249163879598662
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 98.49% (std=0.00%)
+Recall Fahad(rf): 0.9849498327759197
+F1-Score Fahad(rf): 0.9849498327759197
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 50.00% (std=0.00%)
+Recall Soysal(svm): 0.5
+F1-Score Soysal(svm): 0.5
+
+Soysal(rf): 23.66% (std=0.00%)
+Recall Soysal(rf): 0.23662207357859533
+F1-Score Soysal(rf): 0.23662207357859533
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 50.00% (std=0.00%)
+Recall Zhang(svm): 0.5
+F1-Score Zhang(svm): 0.5
+
+Zhang(rf): 25.08% (std=0.00%)
+Recall Zhang(rf): 0.2508361204013378
+F1-Score Zhang(rf): 0.2508361204013378
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_ULBP(rf): 0.00594349
+Eerman(rf): 0.00325109
+DCTraCS_RLBP(svm): 0.12218323
+Soysal(rf): 0.00301902
+Fahad(rf): 0.00297604
+Zhang(svm): 0.74902822
+Soysal(svm): 1.00000000
+Eerman(svm): 0.40521893
+DCTraCS_RLBP(rf): 0.00606167
+DCTraCS_ULBP(svm): 0.11957463
+Zhang(rf): 0.00309208
+Fahad(svm): 0.51688824

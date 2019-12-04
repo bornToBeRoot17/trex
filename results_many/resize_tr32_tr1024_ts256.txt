@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 99.50% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9949832775919732
+F1-Score DCTraCS_RLBP(rf): 0.9949832775919732
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 98.33% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9832775919732442
+F1-Score DCTraCS_ULBP(rf): 0.9832775919732442
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 25.00% (std=0.00%)
+Recall Eerman(svm): 0.25
+F1-Score Eerman(svm): 0.25
+
+Eerman(rf): 8.11% (std=0.00%)
+Recall Eerman(rf): 0.08110367892976589
+F1-Score Eerman(rf): 0.08110367892976589
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 41.97% (std=0.00%)
+Recall Soysal(svm): 0.4197324414715719
+F1-Score Soysal(svm): 0.4197324414715719
+
+Soysal(rf): 9.78% (std=0.00%)
+Recall Soysal(rf): 0.09782608695652174
+F1-Score Soysal(rf): 0.09782608695652174
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 49.00% (std=0.00%)
+Recall Zhang(svm): 0.4899665551839465
+F1-Score Zhang(svm): 0.4899665551839465
+
+Zhang(rf): 17.81% (std=0.00%)
+Recall Zhang(rf): 0.17809364548494983
+F1-Score Zhang(rf): 0.17809364548494983
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Zhang(svm): 0.92466540
+Zhang(rf): 0.00302474
+DCTraCS_RLBP(rf): 0.00605375
+DCTraCS_ULBP(rf): 0.00591287
+DCTraCS_ULBP(svm): 0.15593314
+Soysal(svm): 1.00000000
+Eerman(svm): 0.43888403
+Fahad(svm): 0.54039106
+Soysal(rf): 0.00306743
+Eerman(rf): 0.00325741
+DCTraCS_RLBP(svm): 0.15296817
+Fahad(rf): 0.00293509

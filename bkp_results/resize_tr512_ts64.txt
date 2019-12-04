@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+DCTraCS_ULBP(svm): 99.75% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.9974916387959867
+F1-Score DCTraCS_ULBP(svm): 0.9974916387959867
+
+DCTraCS_ULBP(rf): 96.83% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9683110367892975
+F1-Score DCTraCS_ULBP(rf): 0.9683110367892975
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+DCTraCS_RLBP(svm): 99.92% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.9991638795986619
+F1-Score DCTraCS_RLBP(svm): 0.9991638795986619
+
+DCTraCS_RLBP(rf): 64.58% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.645819397993311
+F1-Score DCTraCS_RLBP(rf): 0.645819397993311
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Eerman(svm): 25.00% (std=0.00%)
+Recall Eerman(svm): 0.25
+F1-Score Eerman(svm): 0.25
+
+Eerman(rf): 25.00% (std=0.00%)
+Recall Eerman(rf): 0.25
+F1-Score Eerman(rf): 0.25
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 35.00% (std=0.00%)
+Recall Fahad(rf): 0.35
+F1-Score Fahad(rf): 0.35
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Soysal(svm): 25.00% (std=0.00%)
+Recall Soysal(svm): 0.25
+F1-Score Soysal(svm): 0.25
+
+Soysal(rf): 25.00% (std=0.00%)
+Recall Soysal(rf): 0.25
+F1-Score Soysal(rf): 0.25
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Zhang(svm): 25.00% (std=0.00%)
+Recall Zhang(svm): 0.25
+F1-Score Zhang(svm): 0.25
+
+Zhang(rf): 25.00% (std=0.00%)
+Recall Zhang(rf): 0.25
+F1-Score Zhang(rf): 0.25
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of Soysal(rf)
+
+0	299	0	0	
+0	0	0	299	
+0	299	0	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Fahad(svm): 0.56931543
+DCTraCS_ULBP(rf): 0.00750737
+Eerman(rf): 0.00433672
+Zhang(rf): 0.00418605
+Fahad(rf): 0.00417294
+Soysal(rf): 0.00385850
+DCTraCS_RLBP(svm): 0.10184736
+DCTraCS_ULBP(svm): 0.10484442
+DCTraCS_RLBP(rf): 0.00761874
+Eerman(svm): 0.47765804
+Zhang(svm): 0.81037668
+Soysal(svm): 1.00000000

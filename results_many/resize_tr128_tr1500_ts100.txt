@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 99.50% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.9949832775919732
+F1-Score DCTraCS_RLBP(svm): 0.9949832775919732
+
+DCTraCS_RLBP(rf): 74.92% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.7491638795986622
+F1-Score DCTraCS_RLBP(rf): 0.7491638795986623
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 96.74% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.967391304347826
+F1-Score DCTraCS_ULBP(rf): 0.967391304347826
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 68.14% (std=0.00%)
+Recall Eerman(svm): 0.681438127090301
+F1-Score Eerman(svm): 0.681438127090301
+
+Eerman(rf): 68.14% (std=0.00%)
+Recall Eerman(rf): 0.681438127090301
+F1-Score Eerman(rf): 0.681438127090301
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 73.41% (std=0.00%)
+Recall Soysal(svm): 0.7341137123745819
+F1-Score Soysal(svm): 0.734113712374582
+
+Soysal(rf): 68.39% (std=0.00%)
+Recall Soysal(rf): 0.6839464882943144
+F1-Score Soysal(rf): 0.6839464882943144
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 41.81% (std=0.00%)
+Recall Zhang(svm): 0.4180602006688963
+F1-Score Zhang(svm): 0.4180602006688963
+
+Zhang(rf): 68.39% (std=0.00%)
+Recall Zhang(rf): 0.6839464882943144
+F1-Score Zhang(rf): 0.6839464882943144
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Eerman(svm): 0.41859987
+Zhang(svm): 0.73042319
+Fahad(rf): 0.00294185
+Eerman(rf): 0.00310898
+DCTraCS_ULBP(svm): 0.17904365
+Soysal(svm): 1.00000000
+DCTraCS_RLBP(svm): 0.07848292
+Fahad(svm): 0.51195703
+DCTraCS_RLBP(rf): 0.00599726
+Soysal(rf): 0.00301684
+Zhang(rf): 0.00292899
+DCTraCS_ULBP(rf): 0.00614725

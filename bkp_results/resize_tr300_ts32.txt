@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+DCTraCS_ULBP(svm): 73.49% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.7349498327759197
+F1-Score DCTraCS_ULBP(svm): 0.7349498327759197
+
+DCTraCS_ULBP(rf): 80.97% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.8096989966555185
+F1-Score DCTraCS_ULBP(rf): 0.8096989966555185
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+DCTraCS_RLBP(svm): 99.58% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.995819397993311
+F1-Score DCTraCS_RLBP(svm): 0.995819397993311
+
+DCTraCS_RLBP(rf): 48.46% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.48461538461538456
+F1-Score DCTraCS_RLBP(rf): 0.48461538461538456
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Eerman(svm): 25.00% (std=0.00%)
+Recall Eerman(svm): 0.25
+F1-Score Eerman(svm): 0.25
+
+Eerman(rf): 25.00% (std=0.00%)
+Recall Eerman(rf): 0.25
+F1-Score Eerman(rf): 0.25
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Fahad(svm): 59.87% (std=0.00%)
+Recall Fahad(svm): 0.5986622073578597
+F1-Score Fahad(svm): 0.5986622073578597
+
+Fahad(rf): 40.00% (std=0.00%)
+Recall Fahad(rf): 0.4
+F1-Score Fahad(rf): 0.4
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Soysal(svm): 25.00% (std=0.00%)
+Recall Soysal(svm): 0.25
+F1-Score Soysal(svm): 0.25
+
+Soysal(rf): 25.00% (std=0.00%)
+Recall Soysal(rf): 0.25
+F1-Score Soysal(rf): 0.25
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Zhang(svm): 25.00% (std=0.00%)
+Recall Zhang(svm): 0.25
+F1-Score Zhang(svm): 0.25
+
+Zhang(rf): 25.00% (std=0.00%)
+Recall Zhang(rf): 0.25
+F1-Score Zhang(rf): 0.25
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of Soysal(rf)
+
+0	299	0	0	
+0	0	0	299	
+0	299	0	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Soysal(svm): 1.00000000
+Zhang(svm): 0.77995789
+DCTraCS_RLBP(rf): 0.00768343
+Fahad(svm): 0.57361956
+Zhang(rf): 0.00414772
+Eerman(svm): 0.46230629
+DCTraCS_ULBP(rf): 0.00771669
+Fahad(rf): 0.00418098
+Soysal(rf): 0.00389161
+Eerman(rf): 0.00437723
+DCTraCS_ULBP(svm): 0.10933088
+DCTraCS_RLBP(svm): 0.10987969

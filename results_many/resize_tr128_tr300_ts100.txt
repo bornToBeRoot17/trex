@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 99.41% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9941471571906354
+F1-Score DCTraCS_RLBP(rf): 0.9941471571906354
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 99.16% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9916387959866221
+F1-Score DCTraCS_ULBP(rf): 0.9916387959866221
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 72.91% (std=0.00%)
+Recall Eerman(svm): 0.7290969899665551
+F1-Score Eerman(svm): 0.7290969899665551
+
+Eerman(rf): 72.99% (std=0.00%)
+Recall Eerman(rf): 0.729933110367893
+F1-Score Eerman(rf): 0.729933110367893
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 73.75% (std=0.00%)
+Recall Fahad(rf): 0.7374581939799331
+F1-Score Fahad(rf): 0.7374581939799331
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 74.08% (std=0.00%)
+Recall Soysal(svm): 0.7408026755852842
+F1-Score Soysal(svm): 0.7408026755852842
+
+Soysal(rf): 73.75% (std=0.00%)
+Recall Soysal(rf): 0.7374581939799331
+F1-Score Soysal(rf): 0.7374581939799331
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 48.41% (std=0.00%)
+Recall Zhang(svm): 0.48411371237458195
+F1-Score Zhang(svm): 0.48411371237458195
+
+Zhang(rf): 73.75% (std=0.00%)
+Recall Zhang(rf): 0.7374581939799331
+F1-Score Zhang(rf): 0.7374581939799331
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_RLBP(rf): 0.00618272
+DCTraCS_RLBP(svm): 0.09533022
+DCTraCS_ULBP(svm): 0.08047876
+Fahad(rf): 0.00292979
+Zhang(svm): 0.72277718
+Eerman(svm): 0.45554797
+Eerman(rf): 0.00311290
+Zhang(rf): 0.00291687
+Soysal(svm): 1.00000000
+Fahad(svm): 0.51137987
+DCTraCS_ULBP(rf): 0.00589836
+Soysal(rf): 0.00293841

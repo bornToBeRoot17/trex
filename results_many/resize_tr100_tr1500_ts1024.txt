@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 1.0
+F1-Score DCTraCS_RLBP(svm): 1.0
+
+DCTraCS_RLBP(rf): 99.58% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.995819397993311
+F1-Score DCTraCS_RLBP(rf): 0.995819397993311
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 100.00% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 1.0
+F1-Score DCTraCS_ULBP(svm): 1.0
+
+DCTraCS_ULBP(rf): 99.92% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.9991638795986622
+F1-Score DCTraCS_ULBP(rf): 0.9991638795986622
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 45.74% (std=0.00%)
+Recall Eerman(svm): 0.45735785953177255
+F1-Score Eerman(svm): 0.45735785953177255
+
+Eerman(rf): 41.72% (std=0.00%)
+Recall Eerman(rf): 0.41722408026755853
+F1-Score Eerman(rf): 0.4172240802675586
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 47.32% (std=0.00%)
+Recall Soysal(svm): 0.47324414715719065
+F1-Score Soysal(svm): 0.47324414715719065
+
+Soysal(rf): 62.54% (std=0.00%)
+Recall Soysal(rf): 0.6254180602006689
+F1-Score Soysal(rf): 0.6254180602006689
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 49.41% (std=0.00%)
+Recall Zhang(svm): 0.49414715719063546
+F1-Score Zhang(svm): 0.49414715719063546
+
+Zhang(rf): 39.38% (std=0.00%)
+Recall Zhang(rf): 0.39381270903010035
+F1-Score Zhang(rf): 0.39381270903010035
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+299	0	0	0	
+0	299	0	0	
+0	0	299	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Fahad(svm): 0.51934195
+DCTraCS_ULBP(svm): 0.17740118
+Eerman(rf): 0.00343249
+DCTraCS_RLBP(rf): 0.00599877
+Eerman(svm): 0.42583092
+Zhang(rf): 0.00308342
+DCTraCS_RLBP(svm): 0.10821707
+DCTraCS_ULBP(rf): 0.00590612
+Soysal(rf): 0.00308342
+Fahad(rf): 0.00289596
+Soysal(svm): 1.00000000
+Zhang(svm): 0.75397494

@@ -1,0 +1,161 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(svm): 75.00% (std=0.00%)
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+DCTraCS_ULBP(rf): 50.00% (std=0.00%)
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+DCTraCS_ULBP(rf): 75.00% (std=0.00%)
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(svm): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+DCTraCS_RLBP(rf): 75.00% (std=0.00%)
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(svm): 19.06% (std=0.00%)
+Eerman(rf): 42.98% (std=0.00%)
+Eerman(rf): 42.98% (std=0.00%)
+Eerman(rf): 40.97% (std=0.00%)
+Eerman(rf): 40.97% (std=0.00%)
+Eerman(rf): 40.97% (std=0.00%)
+Eerman(rf): 42.98% (std=0.00%)
+Eerman(rf): 42.98% (std=0.00%)
+Eerman(rf): 42.98% (std=0.00%)
+Eerman(rf): 42.98% (std=0.00%)
+Eerman(rf): 42.98% (std=0.00%)
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(svm): 75.00% (std=0.00%)
+Fahad(rf): 28.26% (std=0.00%)
+Fahad(rf): 50.00% (std=0.00%)
+Fahad(rf): 28.26% (std=0.00%)
+Fahad(rf): 50.00% (std=0.00%)
+Fahad(rf): 28.26% (std=0.00%)
+Fahad(rf): 50.00% (std=0.00%)
+Fahad(rf): 50.00% (std=0.00%)
+Fahad(rf): 28.26% (std=0.00%)
+Fahad(rf): 50.00% (std=0.00%)
+Fahad(rf): 28.26% (std=0.00%)
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(svm): 25.00% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+Soysal(rf): 28.26% (std=0.00%)
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(svm): 39.55% (std=0.00%)
+Zhang(rf): 28.26% (std=0.00%)
+Zhang(rf): 39.55% (std=0.00%)
+Zhang(rf): 39.55% (std=0.00%)
+Zhang(rf): 28.26% (std=0.00%)
+Zhang(rf): 39.55% (std=0.00%)
+Zhang(rf): 39.55% (std=0.00%)
+Zhang(rf): 28.26% (std=0.00%)
+Zhang(rf): 39.55% (std=0.00%)
+Zhang(rf): 39.55% (std=0.00%)
+Zhang(rf): 28.26% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of Soysal(rf)
+
+299	0	0	0	
+299	0	0	0	
+299	0	0	0	
+0	260	0	39	
+
+
+Fig. 8. Normalized classification time.
+
+Soysal(rf): 0.00397681
+Zhang(rf): 0.00433895
+DCTraCS_ULBP(svm): 0.11657149
+Eerman(svm): 0.30912822
+Zhang(svm): 0.79361162
+DCTraCS_RLBP(rf): 0.00769208
+Eerman(rf): 0.00462061
+Fahad(svm): 0.57747570
+DCTraCS_ULBP(rf): 0.00770549
+Fahad(rf): 0.00433224
+Soysal(svm): 1.00000000
+DCTraCS_RLBP(svm): 0.12066566

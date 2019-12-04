@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+DCTraCS_ULBP(svm): 73.33% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.733277591973244
+F1-Score DCTraCS_ULBP(svm): 0.733277591973244
+
+DCTraCS_ULBP(rf): 85.10% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.8510033444816052
+F1-Score DCTraCS_ULBP(rf): 0.8510033444816052
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+DCTraCS_RLBP(svm): 99.16% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.9916387959866222
+F1-Score DCTraCS_RLBP(svm): 0.9916387959866222
+
+DCTraCS_RLBP(rf): 58.60% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.586036789297659
+F1-Score DCTraCS_RLBP(rf): 0.586036789297659
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Eerman(svm): 25.00% (std=0.00%)
+Recall Eerman(svm): 0.25
+F1-Score Eerman(svm): 0.25
+
+Eerman(rf): 25.00% (std=0.00%)
+Recall Eerman(rf): 0.25
+F1-Score Eerman(rf): 0.25
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Fahad(svm): 52.17% (std=0.00%)
+Recall Fahad(svm): 0.5217391304347825
+F1-Score Fahad(svm): 0.5217391304347825
+
+Fahad(rf): 35.00% (std=0.00%)
+Recall Fahad(rf): 0.35
+F1-Score Fahad(rf): 0.35
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Soysal(svm): 25.00% (std=0.00%)
+Recall Soysal(svm): 0.25
+F1-Score Soysal(svm): 0.25
+
+Soysal(rf): 25.00% (std=0.00%)
+Recall Soysal(rf): 0.25
+F1-Score Soysal(rf): 0.25
+
+
+Cross validation (max=10): [ 1 2 3 4 5 6 7 8 9 10 ]
+Zhang(svm): 25.00% (std=0.00%)
+Recall Zhang(svm): 0.25
+F1-Score Zhang(svm): 0.25
+
+Zhang(rf): 25.00% (std=0.00%)
+Recall Zhang(rf): 0.25
+F1-Score Zhang(rf): 0.25
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of Soysal(rf)
+
+0	299	0	0	
+0	0	0	299	
+0	299	0	0	
+0	0	0	299	
+
+
+Fig. 8. Normalized classification time.
+
+Zhang(rf): 0.00401099
+Eerman(rf): 0.00424917
+DCTraCS_RLBP(svm): 0.10043667
+Fahad(svm): 0.56246249
+Fahad(rf): 0.00403322
+DCTraCS_RLBP(rf): 0.00739318
+DCTraCS_ULBP(rf): 0.00732013
+Soysal(svm): 1.00000000
+DCTraCS_ULBP(svm): 0.10339013
+Eerman(svm): 0.48740969
+Soysal(rf): 0.00374740
+Zhang(svm): 0.80223891

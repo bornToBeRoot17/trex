@@ -1,0 +1,89 @@
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_RLBP(svm): 99.83% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 0.9983277591973244
+F1-Score DCTraCS_RLBP(svm): 0.9983277591973244
+
+DCTraCS_RLBP(rf): 98.16% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 0.9816053511705686
+F1-Score DCTraCS_RLBP(rf): 0.9816053511705686
+
+
+Cross validation (max=1): [ 1 ]
+DCTraCS_ULBP(svm): 75.59% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 0.7558528428093646
+F1-Score DCTraCS_ULBP(svm): 0.7558528428093646
+
+DCTraCS_ULBP(rf): 84.53% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 0.8453177257525084
+F1-Score DCTraCS_ULBP(rf): 0.8453177257525084
+
+
+Cross validation (max=1): [ 1 ]
+Eerman(svm): 50.00% (std=0.00%)
+Recall Eerman(svm): 0.5
+F1-Score Eerman(svm): 0.5
+
+Eerman(rf): 25.08% (std=0.00%)
+Recall Eerman(rf): 0.2508361204013378
+F1-Score Eerman(rf): 0.2508361204013378
+
+
+Cross validation (max=1): [ 1 ]
+Fahad(svm): 75.00% (std=0.00%)
+Recall Fahad(svm): 0.75
+F1-Score Fahad(svm): 0.75
+
+Fahad(rf): 75.00% (std=0.00%)
+Recall Fahad(rf): 0.75
+F1-Score Fahad(rf): 0.75
+
+
+Cross validation (max=1): [ 1 ]
+Soysal(svm): 50.00% (std=0.00%)
+Recall Soysal(svm): 0.5
+F1-Score Soysal(svm): 0.5
+
+Soysal(rf): 25.00% (std=0.00%)
+Recall Soysal(rf): 0.25
+F1-Score Soysal(rf): 0.25
+
+
+Cross validation (max=1): [ 1 ]
+Zhang(svm): 25.00% (std=0.00%)
+Recall Zhang(svm): 0.25
+F1-Score Zhang(svm): 0.25
+
+Zhang(rf): 25.08% (std=0.00%)
+Recall Zhang(rf): 0.2508361204013378
+F1-Score Zhang(rf): 0.2508361204013378
+
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of DCTraCS_ULBP(svm)
+
+295	4	0	0	
+0	299	0	0	
+0	1	298	0	
+287	0	0	12	
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_ULBP(rf): 0.00598130
+Fahad(rf): 0.00290459
+Soysal(rf): 0.00300786
+Zhang(svm): 0.80852098
+Eerman(rf): 0.00317353
+DCTraCS_ULBP(svm): 0.09140629
+Soysal(svm): 1.00000000
+Eerman(svm): 0.60874130
+DCTraCS_RLBP(rf): 0.00604585
+DCTraCS_RLBP(svm): 0.10802269
+Fahad(svm): 0.52051284
+Zhang(rf): 0.00292825
