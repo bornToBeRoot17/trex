@@ -16,7 +16,9 @@ def read_classes(method,dim_images):
     sckit_filepath=get_sckit_filepath(dim_images)
     X = None
     cnt=0
+    n_files = len(glob.glob(sckit_filepath+"/"+method+"/class*.sck"))/2
     for i in glob.glob(sckit_filepath+"/"+method+"/class*.sck"):
+        if (cnt > n_files): break
         X_train, y_train = load_svmlight_file(i)
         cnt+=1
         if X == None:
@@ -36,9 +38,14 @@ def read_classes_train_test(method,num_train,dim_images):
 
     count = 0
     for i in glob.glob(sckit_filepath+"/"+method+"/class*.sck"):
+        try:
+            num_class = int(i[-6]+i[-5])
+        except:
+            num_class = int(i[-5])
+
         count += 1
         X, y = load_svmlight_file(i)
-        if (int(i[-5]) > num_train):
+        if (num_class > num_train):
             if X_test == None:
                 X_test=X
                 y_test=y

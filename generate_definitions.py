@@ -2,9 +2,7 @@
 
 from sys import argv, exit
 
-N_EXAMPLES = 299
-
-def generate_sufix(dims):
+def generate_sufix(dims, file_sufix):
     sufix = "tr" + dims["train"][0]
     for j in range(1,len(dims["train"])):
         sufix += "_tr" + dims["train"][j]
@@ -17,6 +15,8 @@ def generate_sufix(dims):
     sufix += "_r" + dims["test_resize"][0]
     for j in range(1,len(dims["test_resize"])):
         sufix += "_r" + dims["test_resize"][j]
+
+    sufix += file_sufix
 
     return sufix
 
@@ -68,20 +68,19 @@ def count_imgs(train_apps):
 
     return n_max
 
-def generate_definitions(dims, sufix):
+def generate_definitions(dims, sufix, num_imgs, parser, sck_path, classes, dataset):
     with open("definitions.ini",'r') as f:
         lstF = f.readlines()
         f.close()
 
     # Configuring [Paths]
-    sckit_files_path = "./training_scikit_out/"
+    sckit_files_path = sck_path
 
     # Configuring [Applications]
     used_apps = []
     line_used_apps = []
     count = 1
 
-    classes = ['ft','lu','map','allreduce']
     #for train_dim in dims["train"]:
     #    for app_train in apps[train_dim]:
     #        ok = 0
@@ -129,9 +128,9 @@ def generate_definitions(dims, sufix):
                 line += str(k+1)
 
         line += '='
-        for k in range(N_EXAMPLES):
+        for k in range(num_imgs):
             line += str(k) + ','
-        line += str(N_EXAMPLES) + '\n'
+        line += str(num_imgs) + '\n'
         #if (used_apps[j] in images_balanced):
         #    line += '=' + images_balanced[used_apps[j]] + '\n'
         #else:
@@ -140,10 +139,14 @@ def generate_definitions(dims, sufix):
         line_classes.append(line)
 
     i = 0
+    while("acquiring:" not in lstF[i]): i += 1
+    lstF[i] = lstF[i][:-1] + parser + '\n'
+
     while ("sckit_files_path:" not in lstF[i]): i += 1
     lstF[i] = lstF[i][:-1] + ' ' + sckit_files_path + '\n'
 
     while ("img_path:" not in lstF[i]): i += 1
+    lstF[i] = lstF[i][:-1] + ' ' + dataset + '\n'
 
     while ("sckit_files_path_out:" not in lstF[i]): i += 1
     lstF[i] = lstF[i][:-1] + ' ' + sckit_files_path + '\n'
@@ -208,14 +211,21 @@ def update_dims(dims, dim_lst, key):
     return dims
 
 def main(argv):
-    if (len(argv) != 5):
-        print("Usage:", argv[0], "<[train_dim]> <[train_resize_dim]> <[test_dim]> <[test_resize_dim]>")
+    if (len(argv) != 10):
+        print("Usage:", argv[0], "<[train_dim]> <[train_resize_dim]> <[test_dim]> <[test_resize_dim]> <num_imgs> <parser> <sck_path> <classes> <dataset>")
         exit(-1)
 
     train_dim        = argv[1]
     train_resize_dim = argv[2]
     test_dim         = argv[3]
     test_resize_dim  = argv[4]
+    num_imgs         = int(argv[5])
+    parser           = argv[6]
+    sck_path         = argv[7]
+    classes          = argv[8].split(',')
+    dataset          = argv[9]
+    #file_sufix       = argv[10]
+    file_sufix       = ''
 
     dims = {}
 
@@ -224,9 +234,9 @@ def main(argv):
     dims = update_dims(dims, test_dim,         "test")
     dims = update_dims(dims, test_resize_dim,  "test_resize")
 
-    sufix = generate_sufix(dims)
+    sufix = generate_sufix(dims, file_sufix)
 
-    lstF = generate_definitions(dims, sufix)
+    lstF = generate_definitions(dims, sufix, num_imgs, parser, sck_path, classes, dataset)
     write_definitions(lstF, dims, sufix)
 
     return 0

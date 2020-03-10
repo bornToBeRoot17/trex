@@ -2,6 +2,9 @@ import numpy as np
 from PIL import Image
 from PIL import ImageFilter
 
+from util import *
+from preprocessing import *
+
 #from scipy import misc
 #import png2svg
 
@@ -41,10 +44,13 @@ def image_parser(img_path,dim,resize_dim):
     w, h = img.size
 
     TMs = []
+    # Create a matrix for storing the TM
+    #     - Each position holds normalized number of bytes transmitted from TM[line] to TM[col]
+    TM = [ [ 0 for i in range(h) ] for j in range(w) ]
 
     #dim = 256
     #newDim = 64
-    #if (w != newDim):
+    #if (resize_dim):
     for new_dim in resize_dim:
         if (w in dim and w != new_dim and new_dim != 0):
             img = img.resize((new_dim,new_dim))
@@ -54,9 +60,7 @@ def image_parser(img_path,dim,resize_dim):
             w, h = img.size
             #img = img.resize((newDim,newDim),Image.ANTIALIAS)
 
-    # Create a matrix for storing the TM
-    #     - Each position holds normalized number of bytes transmitted from TM[line] to TM[col]
-    TM = [ [ 0 for i in range(h) ] for j in range(w) ]
+            TM = [ [ 0 for i in range(h) ] for j in range(w) ]
 
     pix=img.load()
     #pix = remove_middle_img(pix, w, h)
@@ -68,6 +72,30 @@ def image_parser(img_path,dim,resize_dim):
             #TM[i][j]=(pix[i,j][0])       # Invert colors
 
     TMs.append(TM)
+
+    return TMs
+
+def image_parser_lenet(img_path,dim,resize_dim):
+    import cv2
+
+    TMs = []
+
+    #print(img_path)
+    tm = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE) #.astype(np.int32)
+    tm = cv2.resize(tm, (128,128)) #, interpolation=cv2.INTER_NEAREST)
+
+    #for i in range(tm.shape[0]):
+    #    for j in range(tm.shape[1]):
+    #        aux = float(tm[i][j]/255)
+    #        if (aux < 0.7):
+    #            tm[i][j] = 1
+    #        else:
+    #            tm[i][j] = 0
+
+    #if (np.sum(tm) > tm.shape[0]*tm.shape[1]/2):
+    #    tm = 1 - tm
+
+    TMs.append(tm)
 
     return TMs
 
@@ -253,14 +281,25 @@ def image_black(img_path,dim,resize_dim):
 
     for i in range(tm.shape[0]):
         for j in range(tm.shape[1]):
-            aux = float(tm[i][j]/255)
-            if (aux < 0.7):
-                tm[i][j] = 1
-            else:
-                tm[i][j] = 0
+            tm[i][j] = int(float(tm[i][j]/255)/0.7)
+
+    fname = img_path.split('/')[-3]+'_resize_'+img_path.split('/')[-1]
+    fname = fname[:-4]+'_2.png'
+    cv2.imwrite('./imgs/'+fname, tm)
+
 
     if (np.sum(tm) > tm.shape[0]*tm.shape[1]/2):
         tm = 1 - tm
+
+    fname = img_path.split('/')[-3]+'_resize_'+img_path.split('/')[-1]
+    fname = fname[:-4]+'_3.png'
+    cv2.imwrite('./imgs/'+fname, tm)
+
+    if (resize_dim[0] != 0):
+        tm = cv2.resize(tm.astype('int32'), (resize_dim[0],resize_dim[0]))
+
+        fname = img_path.split('/')[-3]+'_resize_'+img_path.split('/')[-1]
+        cv2.imwrite('./imgs/'+fname, tm)
 
     TMs.append(tm)
 
@@ -303,3 +342,131 @@ def image_split(img_path,dim,resize_dim):
         TMs.append(tm)
 
     return TMs
+
+
+def image_parser_interpolation(img_path,dim,resize_dim):
+    import cv2
+
+    TMs = []
+    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+    #img = img.filter(ImageFilter.BLUR)
+    #img = img.filter(ImageFilter.SMOOTH)
+    #img = img.filter(ImageFilter.SMOOTH_MORE)
+    newDim = 100
+
+    TM = [ [ 0 for i in range(newDim) ] for j in range(newDim) ]
+
+    if (dim[0] != newDim):
+        img = cv2.resize(img, None, fx=10, fy=10, interpolation=cv2.INTER_NEAREST)
+        dim_resize = (newDim, newDim)
+
+        img = cv2.resize(img, dim_resize)
+
+        fname = img_path.split('/')[-3]+'_'+img_path.split('/')[-1]
+        cv2.imwrite('./imgs/'+fname, img)
+        #print(img.shape[0], img.shape[1])
+
+    for i in range(newDim):
+        for j in range(newDim):
+            TM[i][j]=(255-img[i][j])   # Normal colors
+            #TM[i][j]=(255-pix[i,j][0])   # Normal colors
+            #TM[i][j]=(pix[i,j][0])       # Invert colors
+
+    TMs.append(TM)
+
+    return TMs
+
+def image_parser_dilation(img_path,dim,resize_dim):
+    import cv2
+
+    TMs = []
+    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+    #TM = [ [ 0 for i in range(newDim) ] for j in range(newDim) ]
+
+
+    count_black = 0
+    for i in range(img.shape[0]):
+        for j in range(img.shape[1]):
+            img[i][j]=(255-img[i][j]) # Normal colors
+            #TM[i][j]=(pix[i,j][0])   # Invert colors
+
+            if (float(img[i][j]/255) > 0.7): count_black += 1
+
+    kernel = np.ones((1,1), np.uint8)
+    if (count_black > img.shape[0]*img.shape[1]/2):
+        kernel = np.zeros((1,1), np.uint8)
+
+    img = cv2.dilate(img, kernel, iterations=1)
+    fname = img_path.split('/')[-3]+'_dilation_'+img_path.split('/')[-1]
+    cv2.imwrite('./imgs/'+fname, img)
+
+    newDim = 100
+    if (dim[0] != newDim):
+        dim_resize = (newDim, newDim)
+
+        img = cv2.resize(img, dim_resize)
+        fname = img_path.split('/')[-3]+'_resize_'+img_path.split('/')[-1]
+        cv2.imwrite('./imgs/'+fname, img)
+
+        #print(img.shape[0], img.shape[1])
+
+
+    TMs.append(img)
+
+    return TMs
+
+
+def image_read_dilation(img_path,dim,resize_dim):
+    import cv2
+
+    #print(img_path)
+
+    TMs = []
+    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE).astype(np.int16)
+    #TM = [ [ 0 for i in range(newDim) ] for j in range(newDim) ]
+
+    dim_imgs = 'tr128_r0_ts256_r128'
+    preproc=globals()[get_definitions("Functions","preprocessing",dim_imgs)]
+    img = preproc.__call__(img)
+
+    count = np.sum(img)
+
+    if (count > img.shape[0]*img.shape[1]*255*0.3):
+        img -= 255
+        img *= -1
+
+    kernel_size=(2,2)
+    kernel = np.ones(kernel_size, np.uint8)
+
+    #img = cv2.dilate(img, kernel, iterations=2)
+    #if ('fig10.png' in img_path):
+    #    fname = img_path.split('/')[-3]+'_dilation_'+img_path.split('/')[-1]
+    #    cv2.imwrite('./imgs/'+fname, img)
+
+    dim    = int(dim[0])
+    newDim = int(resize_dim[0])
+    if (newDim != 0 and dim != newDim):
+        dim_resize = (int(newDim), int(newDim))
+        img = cv2.dilate(img, kernel, iterations=2)
+        img = cv2.resize(img, dim_resize)
+        if ('fig10.png' in img_path):
+            fname = img_path.split('/')[-3]+'_resize_'+img_path.split('/')[-1]
+            cv2.imwrite('./imgs/'+fname, img)
+    else:
+        img = cv2.dilate(img, kernel, iterations=1)
+        if ('fig10.png' in img_path):
+            fname = img_path.split('/')[-3]+'_dilation_'+img_path.split('/')[-1]
+            cv2.imwrite('./imgs/'+fname, img)
+
+        #print(img.shape[0], img.shape[1])
+
+
+    #for i in range(img.shape[0]):
+    #    for j in range(img.shape[1]):
+    #        print(img[i][j],end=' ')
+    #    print()
+
+    TMs.append(img)
+
+    return TMs
+
