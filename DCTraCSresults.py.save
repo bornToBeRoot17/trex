@@ -17,14 +17,15 @@ from roc_curve import *
 from sys import argv, exit
 
 
+
+
 def DCTracCS_results(dim_images):
     print('Training classifier...')
 
     methods=["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang"] # "Fahad"
     #methods=["LBP"]
     #classif=["svm", "rf", "knn"]
-    #classif=["svm", "rf", "prf", "auto"]
-    classif=["auto"]
+    classif=["svm", "rf", "prf", "auto"]
     times={}
 
     error={}
@@ -86,8 +87,8 @@ def DCTracCS_results(dim_images):
                 # Training classifier
                 clf.fit(X_train, y_train)
                 clf.cv_results_
-                clf.sprint_statistics()
-                clf.show_models()
+                automl.sprint_statistics()
+                automl.show_models()
 
                 # Predicting and getting the time
                 start = time.time() ####

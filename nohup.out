@@ -1,0 +1,8 @@
+Acquiring: class1 app=cg_128
+Acquiring: class2 app=dt_128
+Acquiring: class3 app=mg_128
+Acquiring: class1 app=cg_256
+Acquiring: class2 app=dt_256
+Acquiring: class3 app=mg_256
+Extracting features...
+./results_autosklearn/result_tr128_ts256_cg,dt,mg_n67.txt

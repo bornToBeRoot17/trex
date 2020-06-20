@@ -1,0 +1,100 @@
+Training classifier...
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Accuracy LBP(svm): 50.00% (std=0.00%)
+F1-Score LBP(svm): 66.67% (std=0.00%)
+Recall LBP(svm): 50.00% (std=0.00%)
+Accuracy LBP(rf): 50.00% (std=0.00%)
+F1-Score LBP(rf): 66.67% (std=0.00%)
+Recall LBP(rf): 50.00% (std=0.00%)
+Accuracy LBP(prf): 50.38% (std=0.00%)
+F1-Score LBP(prf): 34.17% (std=0.00%)
+Recall LBP(prf): 50.38% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_ULBP(svm): 50.00% (std=0.00%)
+F1-Score DCTraCS_ULBP(svm): 66.67% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 50.00% (std=0.00%)
+Accuracy DCTraCS_ULBP(rf): 50.00% (std=0.00%)
+F1-Score DCTraCS_ULBP(rf): 66.67% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 50.00% (std=0.00%)
+Accuracy DCTraCS_ULBP(prf): 50.00% (std=0.00%)
+F1-Score DCTraCS_ULBP(prf): 66.67% (std=0.00%)
+Recall DCTraCS_ULBP(prf): 50.00% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_RLBP(svm): 50.00% (std=0.00%)
+F1-Score DCTraCS_RLBP(svm): 66.67% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 50.00% (std=0.00%)
+Accuracy DCTraCS_RLBP(rf): 50.00% (std=0.00%)
+F1-Score DCTraCS_RLBP(rf): 66.67% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 50.00% (std=0.00%)
+Accuracy DCTraCS_RLBP(prf): 50.38% (std=0.00%)
+F1-Score DCTraCS_RLBP(prf): 34.17% (std=0.00%)
+Recall DCTraCS_RLBP(prf): 50.38% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Eerman(svm): 84.98% (std=0.00%)
+F1-Score Eerman(svm): 84.88% (std=0.00%)
+Recall Eerman(svm): 84.98% (std=0.00%)
+Accuracy Eerman(rf): 84.79% (std=0.00%)
+F1-Score Eerman(rf): 84.69% (std=0.00%)
+Recall Eerman(rf): 84.79% (std=0.00%)
+Accuracy Eerman(prf): 84.79% (std=0.00%)
+F1-Score Eerman(prf): 84.69% (std=0.00%)
+Recall Eerman(prf): 84.79% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Soysal(svm): 84.22% (std=0.00%)
+F1-Score Soysal(svm): 84.18% (std=0.00%)
+Recall Soysal(svm): 84.22% (std=0.00%)
+Accuracy Soysal(rf): 86.31% (std=0.00%)
+F1-Score Soysal(rf): 86.24% (std=0.00%)
+Recall Soysal(rf): 86.31% (std=0.00%)
+Accuracy Soysal(prf): 86.31% (std=0.00%)
+F1-Score Soysal(prf): 86.24% (std=0.00%)
+Recall Soysal(prf): 86.31% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Zhang(svm): 94.30% (std=0.00%)
+F1-Score Zhang(svm): 94.28% (std=0.00%)
+Recall Zhang(svm): 94.30% (std=0.00%)
+Accuracy Zhang(rf): 88.59% (std=0.00%)
+F1-Score Zhang(rf): 88.57% (std=0.00%)
+Recall Zhang(rf): 88.59% (std=0.00%)
+Accuracy Zhang(prf): 99.43% (std=0.00%)
+F1-Score Zhang(prf): 99.43% (std=0.00%)
+Recall Zhang(prf): 99.43% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of Zhang(prf)
+
+260	3	
+0	263	
+
+
+Fig. 8. Normalized classification time.
+
+LBP(svm): 0.49466075
+LBP(rf): 0.34713323
+LBP(prf): 0.28897651
+DCTraCS_ULBP(svm): 0.26318383
+DCTraCS_ULBP(rf): 0.15984886
+DCTraCS_ULBP(prf): 0.13767045
+DCTraCS_RLBP(svm): 0.23164120
+DCTraCS_RLBP(rf): 0.16165599
+DCTraCS_RLBP(prf): 0.14177756
+Eerman(svm): 0.13471332
+Eerman(rf): 0.11631345
+Eerman(prf): 0.10514211
+Soysal(svm): 1.00000000
+Soysal(rf): 0.10481354
+Soysal(prf): 0.09643503
+Zhang(svm): 0.13389190
+Zhang(rf): 0.11138492
+Zhang(prf): 0.10070642

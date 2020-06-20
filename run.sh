@@ -9,18 +9,18 @@
 MODE=3
 #TRAIN_SIZE=(32 64 100 128 200 256 300)
 #TEST_SIZE=(32 64 100 128 200 256 300)
-TRAIN_SIZE=(64)
-TEST_SIZE=(64)
-#CLASSES=("bifu" "cyl2d" "multc") # "lu" "map" "allreduce")
-CLASSES=("bt" "cg" "lu" "mg" "sp")
-EXTRACTORS=("DCTraCS_RLBP" "DCTraCS_ULBP" "Eerman" "Fahad" "Soysal" "Zhang" "LBP")
-RESULT_DIR="./results_mpi/"
-NUM_IMGS=108
+TRAIN_SIZE=(128)
+TEST_SIZE=(256)
+#CLASSES=("ft" "lu" "map" "allreduce")
+#CLASSES=("multc" "cylinder3d") # "lu" "map" "allreduce")
+CLASSES=("cg" "dt" "mg")
+EXTRACTORS=("DCTraCS_RLBP" "DCTraCS_ULBP" "Eerman" "Soysal" "Zhang" "LBP") # "Fahad"
+RESULT_DIR="./results_autosklearn/"
 #PARSER="image_read_dilation"
 PARSER="image_parser"
 SCK_PATH="./training_scikit_out/"
-DATASET="/nobackup/ppginf/rgcastro/research/mpi_dataset"
-RESULT_SUFIX=""
+DATASET="/nobackup/ppginf/rgcastro/research/trex_dataset/mpi_dataset/"
+RESULT_SUFIX="article"
 
 if [ ! -d "${RESULT_DIR}" ]; then
     mkdir ${RESULT_DIR}
@@ -33,6 +33,24 @@ mkdir ${SCK_PATH}
 for k in "${EXTRACTORS[@]}"; do
     mkdir ${SCK_PATH}${k}
 done;
+
+NUM_IMGS=400
+for i in "${CLASSES[@]}"; do
+    for j in "${TRAIN_SIZE[@]}"; do
+        N="$(ls ${DATASET}${i}_${j} | wc -l)"
+        if [ $N -lt $NUM_IMGS ]; then
+            NUM_IMGS=$N
+        fi;
+    done;
+
+    for j in "${TEST_SIZE[@]}"; do
+        N="$(ls ${DATASET}${i}_${j} | wc -l)"
+        if [ $N -lt $NUM_IMGS ]; then
+            NUM_IMGS=$N
+        fi;
+    done;
+done;
+NUM_IMGS=$(( NUM_IMGS-1 ))
 
 if [ $MODE -eq 0 ]; then
     if [ ! -d "./results_resize_train/" ]; then

@@ -15,6 +15,48 @@ import shutil
 # 0. List that contains all methods used in this work
 methods = ["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang"] # "Fahad"
 
+from sys import argv, exit
+
+from keras.models import Sequential
+from keras.layers.convolutional import Conv2D
+from keras.layers.convolutional import MaxPooling2D
+from keras.layers.core import Activation
+from keras.layers.core import Flatten
+from keras.layers.core import Dense
+from keras import backend as K
+
+from acquiring import *
+from util import *
+
+
+class LeNet:
+    model = None
+
+    @staticmethod
+    def __init__(numChannels, imgRows, imgCols, numClasses, activation='relu', weightsPath=None):
+
+        semodel = Sequential()
+        inputShape = (imgRows, imgCols, numChannels)
+
+        if (K.image_data_format() == 'channels_first'):
+            inputShape = (numChannels, imgRows, imgCols)
+
+        self.model.add(Conv2D(20, 5, padding='same', input_shape=inputShape))
+        self.model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2)))
+        self.model.add(Conv2D(50, 5, padding='same'))
+        self.model.add(Activation(activation))
+        self.model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2)))
+        self.model.add(Flatten())
+        self.model.add(Dense(500))
+        self.model.add(Activation(activation))
+        self.model.add(Dense(numClasses))
+        self.model.add(Activation('softmax'))
+
+        if (not weightsPath == None):
+            self.model.load_weights(weightsPath)
+
+        print('here')
+
 def split_dims(dim_lst):
     if ('[' in dim_lst): dim_lst = dim_lst.replace('[','')
     if (']' in dim_lst): dim_lst = dim_lst.replace(']','')
@@ -120,76 +162,9 @@ def main(argv):
     class_vect = []
     for i in range(len(imgs)):
         class_vect.append(i)
-    #for i in range(len(class_vect)):
-    #    feature_extraction(imgs,dim_imgs,class_vect[i])
-    print('Extracting features...')
-    n_threads = multiprocessing.cpu_count()
-    pool = ThreadPool(n_threads)
-    result = pool.map(partial(feature_extraction,imgs,dim_imgs),class_vect)
-    pool.close()
-    pool.join()
 
-# 2. Feature extraction process
-def bkp_feature_extraction(imgs,dim_imgs,i):
-    # 2.1 Split the imgs list into variables
-    TM        = imgs[i][0]
-    clnum     = imgs[i][1]
-    class_img = imgs[i][2]
+    lenet = LeNet(1, int(train_dim[0]), int(train_dim[0]), number_of_train_classes)
+    print(lenet.model.summary)
 
-    # 2.2 Run preprocessing algorithm
-    # Preprocessing
-    preproc=globals()[get_definitions("Functions","preprocessing",dim_imgs)]
-    TM_unscr = preproc.__call__(TM)
-    #TM_unscr = TM
-
-    # 2.3 For each method, run feature extraction process and save in the respective directory
-    # Feature extraction (all methods)
-    # DCTraCS_ULBP:
-    write_training_scikit(clnum, ulbp(TM_unscr, True), "DCTraCS_ULBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # DCTraCS_RLBP
-    write_training_scikit(clnum, rlbp(TM_unscr, True), "DCTraCS_RLBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # Eerman
-    write_training_scikit(clnum, eermanFeatures(TM, True), "Eerman", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # Fahad
-    #write_training_scikit(clnum, fahadFeatures(TM, True), "Fahad", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # Soysal
-    write_training_scikit(clnum, soysalFeatures(TM, True), "Soysal", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # Zhang
-    write_training_scikit(clnum, zhangFeatures(TM, True), "Zhang", "class"+str(clnum)+".sck", class_img, dim_imgs)
-
-def feature_extraction(imgs,dim_imgs,i):
-    #from util2 import write_training_scikit
-
-    # 2.1 Split the imgs list into variables
-    TM        = imgs[i][0]
-    clnum     = imgs[i][1]
-    class_img = imgs[i][2]
-    #label     = imgs[i][3]
-
-    # 2.2 Run preprocessing algorithm
-    # Preprocessing
-    #preproc=globals()[get_definitions("Functions","preprocessing",dim_imgs)]
-    #TM_unscr = preproc.__call__(TM)
-    TM_unscr = TM
-
-    # 2.3 For each method, run feature extraction process and save in the respective directory
-    # Feature extraction (all methods)
-    # LBP:
-    write_training_scikit(clnum, lbp(TM_unscr, True), "LBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## DCTraCS_ULBP:
-    write_training_scikit(clnum, ulbp(TM_unscr, True), "DCTraCS_ULBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## DCTraCS_RLBP
-    write_training_scikit(clnum, rlbp(TM_unscr, True), "DCTraCS_RLBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## Eerman
-    write_training_scikit(clnum, eermanFeatures(TM, True), "Eerman", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## Fahad
-    #write_training_scikit(clnum, fahadFeatures(TM, True), "Fahad", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## Soysal
-    write_training_scikit(clnum, soysalFeatures(TM, True), "Soysal", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## Zhang
-    write_training_scikit(clnum, zhangFeatures(TM, True), "Zhang", "class"+str(clnum)+".sck", class_img, dim_imgs)
-
-
-if __name__ == "__main__":
-    main(sys.argv)
-
+if (__name__ == '__main__'):
+    main(argv)

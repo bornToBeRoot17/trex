@@ -9,8 +9,6 @@ from sklearn import tree
 import PRF
 
 from sklearn.neighbors import KNeighborsClassifier
-import autosklearn.classification
-
 
 from util import *
 from roc_curve import *
@@ -23,8 +21,7 @@ def DCTracCS_results(dim_images):
     methods=["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang"] # "Fahad"
     #methods=["LBP"]
     #classif=["svm", "rf", "knn"]
-    #classif=["svm", "rf", "prf", "auto"]
-    classif=["auto"]
+    classif=["svm", "rf", "prf"]
     times={}
 
     error={}
@@ -45,6 +42,7 @@ def DCTracCS_results(dim_images):
         #X, y, ppp = read_classes(k,dim_images)
         num_train = int(get_definitions("Classes","number_of_train_classes",dim_images))
         X_train, y_train, X_test, y_test, ppp = read_classes_train_test(k,num_train,dim_images)
+
 #        for i in range(len(y_train)):
 #            print(y_train[i],end=' ')
 #        print('\n')
@@ -59,7 +57,6 @@ def DCTracCS_results(dim_images):
             recall[k][cl]=[0]*n_repeats
             cm[k][cl]=[0]*n_repeats
             error[k][cl]=[]
-
         for i in range(n_repeats):
             if i==0:
                 print("\nCross validation (max="+str(n_repeats)+"): [ 1",end=' ')
@@ -80,14 +77,9 @@ def DCTracCS_results(dim_images):
                 elif cl == "prf":
                     n_trees = 100
                     cfl = PRF.prf(n_estimators=n_trees, bootstrap=True)
-                elif cl == "auto":
-                    clf = autosklearn.classification.AutoSklearnClassifier(include_preprocessors=["no_preprocessing"])
 
                 # Training classifier
                 clf.fit(X_train, y_train)
-                clf.cv_results_
-                clf.sprint_statistics()
-                clf.show_models()
 
                 # Predicting and getting the time
                 start = time.time() ####
@@ -109,7 +101,6 @@ def DCTracCS_results(dim_images):
                 #    cm=confusion_matrix(y_test, y_pred)
                 ##cm=confusion_matrix(y_test, y_pred)
         print("]")
-
         for cl in classif:
             for i in range(n_repeats):
                 print('Accuracy '+k+"("+cl+"): "+ "{0:.2f}".format(np.mean(scores[k][cl][i])*100) + "% (std="+"{0:.2f}".format(np.std(scores[k][cl][i])*100)+"%)")

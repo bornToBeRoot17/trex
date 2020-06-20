@@ -15,6 +15,12 @@ import shutil
 # 0. List that contains all methods used in this work
 methods = ["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang"] # "Fahad"
 
+from sys import argv, exit
+
+from acquiring import *
+from util import *
+
+
 def split_dims(dim_lst):
     if ('[' in dim_lst): dim_lst = dim_lst.replace('[','')
     if (']' in dim_lst): dim_lst = dim_lst.replace(']','')
@@ -22,6 +28,11 @@ def split_dims(dim_lst):
     else: dim_lst = [dim_lst]
 
     return dim_lst
+
+def glcm(1, int(train_dim[0]), int(train_dim[0]), number_of_train_classes):
+    
+
+    return accuracy
 
 # 1. Main function
 def main(argv):
@@ -39,7 +50,10 @@ def main(argv):
     #        - If newDim == dimToResize, resize step won't be performed)
     #        - Using ImageSize as new size of training images
     dim_imgs = argv[1]
-    imgs = []
+    X_train = []
+    y_train = []
+    X_test  = []
+    y_test  = []
     #hosts = read_hosts(get_definitions("FileNames","hosts",dim_imgs))
     #sci_path = get_sckit_filepath(dim_imgs, out=1)
     #if (os.path.exists(sci_path)):
@@ -84,7 +98,8 @@ def main(argv):
             #     - i: application number
             #     - clnum: class number
             for TM in TMs:
-                imgs.append([TM,i,clnum,t])
+                X_train.append(TM)
+                y_train.append(int(clnum)-1)
 
     # >>> Test imgs
     for i in range(number_of_train_classes+1, number_of_lines+1):
@@ -108,7 +123,8 @@ def main(argv):
             #     - i: application number
             #     - clnum: class number
             for TM in TMs:
-                imgs.append([TM,i,clnum,t])
+                X_test.append(TM)
+                y_test.append(int(clnum)-1)
 
     # 1.5 Start multiprocessing step:
     #     - For each image, feature extraction process will be performed in a single thread
@@ -117,79 +133,21 @@ def main(argv):
     #     - Create n_threads
     #     - Start the threads
     #     - Close the threads
-    class_vect = []
-    for i in range(len(imgs)):
-        class_vect.append(i)
-    #for i in range(len(class_vect)):
-    #    feature_extraction(imgs,dim_imgs,class_vect[i])
-    print('Extracting features...')
-    n_threads = multiprocessing.cpu_count()
-    pool = ThreadPool(n_threads)
-    result = pool.map(partial(feature_extraction,imgs,dim_imgs),class_vect)
-    pool.close()
-    pool.join()
+    #class_vect = []
+    #for i in range(len(imgs)):
+    #    class_vect.append(i)
 
-# 2. Feature extraction process
-def bkp_feature_extraction(imgs,dim_imgs,i):
-    # 2.1 Split the imgs list into variables
-    TM        = imgs[i][0]
-    clnum     = imgs[i][1]
-    class_img = imgs[i][2]
+    X_train = np.asarray(X_train)
+    X_test  = np.asarray(X_test)
+    y_train = np.asarray(y_train)
+    y_test  = np.asarray(y_test)
 
-    # 2.2 Run preprocessing algorithm
-    # Preprocessing
-    preproc=globals()[get_definitions("Functions","preprocessing",dim_imgs)]
-    TM_unscr = preproc.__call__(TM)
-    #TM_unscr = TM
+    X_train = X_train.reshape(X_train.shape[0],128,128,1)
+    X_test = X_test.reshape(X_test.shape[0],128,128,1)
 
-    # 2.3 For each method, run feature extraction process and save in the respective directory
-    # Feature extraction (all methods)
-    # DCTraCS_ULBP:
-    write_training_scikit(clnum, ulbp(TM_unscr, True), "DCTraCS_ULBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # DCTraCS_RLBP
-    write_training_scikit(clnum, rlbp(TM_unscr, True), "DCTraCS_RLBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # Eerman
-    write_training_scikit(clnum, eermanFeatures(TM, True), "Eerman", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # Fahad
-    #write_training_scikit(clnum, fahadFeatures(TM, True), "Fahad", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # Soysal
-    write_training_scikit(clnum, soysalFeatures(TM, True), "Soysal", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    # Zhang
-    write_training_scikit(clnum, zhangFeatures(TM, True), "Zhang", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    accuracy = glcm(1, int(train_dim[0]), int(train_dim[0]), number_of_train_classes)
 
-def feature_extraction(imgs,dim_imgs,i):
-    #from util2 import write_training_scikit
+    print(accuracy)
 
-    # 2.1 Split the imgs list into variables
-    TM        = imgs[i][0]
-    clnum     = imgs[i][1]
-    class_img = imgs[i][2]
-    #label     = imgs[i][3]
-
-    # 2.2 Run preprocessing algorithm
-    # Preprocessing
-    #preproc=globals()[get_definitions("Functions","preprocessing",dim_imgs)]
-    #TM_unscr = preproc.__call__(TM)
-    TM_unscr = TM
-
-    # 2.3 For each method, run feature extraction process and save in the respective directory
-    # Feature extraction (all methods)
-    # LBP:
-    write_training_scikit(clnum, lbp(TM_unscr, True), "LBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## DCTraCS_ULBP:
-    write_training_scikit(clnum, ulbp(TM_unscr, True), "DCTraCS_ULBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## DCTraCS_RLBP
-    write_training_scikit(clnum, rlbp(TM_unscr, True), "DCTraCS_RLBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## Eerman
-    write_training_scikit(clnum, eermanFeatures(TM, True), "Eerman", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## Fahad
-    #write_training_scikit(clnum, fahadFeatures(TM, True), "Fahad", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## Soysal
-    write_training_scikit(clnum, soysalFeatures(TM, True), "Soysal", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    ## Zhang
-    write_training_scikit(clnum, zhangFeatures(TM, True), "Zhang", "class"+str(clnum)+".sck", class_img, dim_imgs)
-
-
-if __name__ == "__main__":
-    main(sys.argv)
-
+if (__name__ == '__main__'):
+    main(argv)

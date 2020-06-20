@@ -37,6 +37,35 @@ def remove_middle_img(img, w, h):
 
 # Converts an image to a TM
 def image_parser(img_path,dim,resize_dim):
+    import cv2
+
+    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+    w, h = img.shape
+
+    TMs = []
+    # Create a matrix for storing the TM
+    #     - Each position holds normalized number of bytes transmitted from TM[line] to TM[col]
+    TM = [ [ 0 for i in range(h) ] for j in range(w) ]
+
+    for new_dim in resize_dim:
+        if (w in dim and w != new_dim and new_dim != 0):
+            img = cv2.resize(img, (new_dim,new_dim))
+            w, h = img.shape
+
+            TM = [ [ 0 for i in range(h) ] for j in range(w) ]
+
+    for i in range(w):
+        for j in range(h):
+            TM[i][j]=(255-img[i][j])   # Normal colors
+            #TM[i][j]=(255-pix[i,j][0])   # Normal colors
+            #TM[i][j]=(pix[i,j][0])       # Invert colors
+
+    TMs.append(TM)
+
+    return TMs
+
+# Converts an image to a TM
+def image_parser_bkp(img_path,dim,resize_dim):
     img = Image.open(img_path)
     #img = img.filter(ImageFilter.BLUR)
     #img = img.filter(ImageFilter.SMOOTH)
@@ -426,8 +455,9 @@ def image_read_dilation(img_path,dim,resize_dim):
     #TM = [ [ 0 for i in range(newDim) ] for j in range(newDim) ]
 
     dim_imgs = 'tr128_r0_ts256_r128'
-    preproc=globals()[get_definitions("Functions","preprocessing",dim_imgs)]
-    img = preproc.__call__(img)
+    #dim_imgs = 'tr64_r0_ts256_r64'
+    #preproc=globals()[get_definitions("Functions","preprocessing",dim_imgs)]
+    #img = preproc.__call__(img)
 
     count = np.sum(img)
 
@@ -458,7 +488,7 @@ def image_read_dilation(img_path,dim,resize_dim):
             fname = img_path.split('/')[-3]+'_dilation_'+img_path.split('/')[-1]
             cv2.imwrite('./imgs/'+fname, img)
 
-        #print(img.shape[0], img.shape[1])
+    #    #print(img.shape[0], img.shape[1])
 
 
     #for i in range(img.shape[0]):

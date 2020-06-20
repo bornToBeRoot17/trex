@@ -32,7 +32,9 @@ def read_classes(method,dim_images):
 def read_classes_train_test(method,num_train,dim_images):
     sckit_filepath=get_sckit_filepath(dim_images)
     X_train = None
-    X_test = None
+    X_test  = None
+    y_train = None
+    y_test  = None
 
     #num_train = int(get_definitions("Classes","number_of_train_classes",dim_imgs))
 

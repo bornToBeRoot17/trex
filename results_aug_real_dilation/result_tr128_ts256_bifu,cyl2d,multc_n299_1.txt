@@ -1,0 +1,31 @@
+Training classifier...
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Accuracy LBP(svm): 99.67% (std=0.00%)
+F1-Score LBP(svm): 99.67% (std=0.00%)
+Recall LBP(svm): 99.67% (std=0.00%)
+Accuracy LBP(rf): 66.67% (std=0.00%)
+F1-Score LBP(rf): 83.33% (std=0.00%)
+Recall LBP(rf): 66.67% (std=0.00%)
+Accuracy LBP(prf): 66.67% (std=0.00%)
+F1-Score LBP(prf): 83.33% (std=0.00%)
+Recall LBP(prf): 66.67% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrix of LBP(svm)
+
+300	0	0	
+0	300	0	
+0	3	297	
+
+
+Fig. 8. Normalized classification time.
+
+LBP(svm): 1.00000000
+LBP(rf): 0.35859567
+LBP(prf): 0.30651639
