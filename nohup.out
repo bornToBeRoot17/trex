@@ -6,3 +6,36 @@ Acquiring: class2 app=dt_256
 Acquiring: class3 app=mg_256
 Extracting features...
 ./results_autosklearn/result_tr128_ts256_cg,dt,mg_n67.txt
+Traceback (most recent call last):
+  File "DCTraCSprocessing.py", line 10, in <module>
+    from relwork import *
+  File "/home/rgcsatro/Documents/Mestrado/trex/relwork.py", line 2, in <module>
+    from sklearn import decomposition
+ModuleNotFoundError: No module named 'sklearn'
+Acquiring: class1 app=bifu_128
+Traceback (most recent call last):
+  File "DCTraCSprocessing.py", line 194, in <module>
+    main(sys.argv)
+  File "DCTraCSprocessing.py", line 86, in main
+    for TM in TMs:
+TypeError: 'NoneType' object is not iterable
+Acquiring: class1 app=bifu_128
+Acquiring: class2 app=cyl2d_128
+Acquiring: class1 app=bifu_512
+Acquiring: class2 app=cyl2d_512
+Extracting features...
+./results_autosklearn/result_tr128_ts512_bifu,cyl2d_n262_3.txt
+Acquiring: class1 app=bifu_128
+Acquiring: class2 app=cyl2d_128
+Acquiring: class3 app=ft_128
+Acquiring: class4 app=lu_128
+Acquiring: class5 app=map_128
+Acquiring: class6 app=allreduce_128
+Acquiring: class1 app=bifu_512
+Acquiring: class2 app=cyl2d_512
+Acquiring: class3 app=ft_512
+Acquiring: class4 app=lu_512
+Acquiring: class5 app=map_512
+Acquiring: class6 app=allreduce_512
+Extracting features...
+./results_thesis/result_tr128_ts512_bifu,cyl2d,ft,lu,map,allreduce_n262.txt

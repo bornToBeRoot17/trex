@@ -60,3 +60,20 @@ def ulbp(TM, normalize):
 
 def lbp(TM, normalize):
     return doLbpMatrix(TM, normalize, 0)
+
+def glcmFeatures(TM):
+    from skimage.feature import greycomatrix, greycoprops
+    import numpy as np
+
+    # Compute some GLCM properties each patch
+    glcm = greycomatrix(TM, distances=[5], angles=[0], levels=TM.shape[0]*TM.shape[1], symmetric=True, normed=True)
+
+    glcm_values = []
+    glcm_values.append(greycoprops(glcm, 'dissimilarity')[0,0])
+    glcm_values.append(greycoprops(glcm, 'homogeneity')[0,0])
+    glcm_values.append(greycoprops(glcm, 'energy')[0,0])
+    glcm_values.append(greycoprops(glcm, 'ASM')[0,0])
+    glcm_values.append(greycoprops(glcm, 'correlation')[0,0])
+    glcm_values.append(greycoprops(glcm, 'contrast')[0,0])
+
+    return glcm_values

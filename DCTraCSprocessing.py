@@ -13,7 +13,7 @@ import shutil
 
 
 # 0. List that contains all methods used in this work
-methods = ["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang"] # "Fahad"
+methods = ["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang", "GLCM"] # "Fahad"
 
 def split_dims(dim_lst):
     if ('[' in dim_lst): dim_lst = dim_lst.replace('[','')
@@ -188,6 +188,9 @@ def feature_extraction(imgs,dim_imgs,i):
     write_training_scikit(clnum, soysalFeatures(TM, True), "Soysal", "class"+str(clnum)+".sck", class_img, dim_imgs)
     ## Zhang
     write_training_scikit(clnum, zhangFeatures(TM, True), "Zhang", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    ## GLCM
+    write_training_scikit(clnum, glcmFeatures(TM), "GLCM", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    
 
 
 if __name__ == "__main__":

@@ -500,3 +500,36 @@ def image_read_dilation(img_path,dim,resize_dim):
 
     return TMs
 
+def gaussian_pyramid(img_path,dim,resize_dim):
+    import cv2
+    import math
+
+    TMs = []
+    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE).astype(np.int16)
+    dim_imgs = 'tr128_r0_ts512_r128'
+    dim = dim[0]
+    newDim = int(resize_dim[0])
+
+    if (newDim != 0 and dim != newDim):
+        dim_resize = (int(newDim), int(newDim))
+        n_down = math.log(dim/newDim,2)
+        for i in ramge(n_down):
+            img = cv2.pyrDown(img)
+        if ('fig10.png' in img_path):
+          fname = img_path.split('/')[-3]+'_resize_'+img_path.split('/')[-1]
+          cv2.imwrite('./imgs/'+fname, img)
+
+    TMs.append(img)
+
+    return TMs
+
+def normal_parser(img_path,dim,resize_dim):
+    import cv2
+    
+    TMs = []
+    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE).astype(np.int16)
+
+    TMs.append(img)
+
+    return TMs
+

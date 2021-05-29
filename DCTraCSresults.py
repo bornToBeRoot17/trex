@@ -6,10 +6,10 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
 from sklearn.metrics import recall_score
 from sklearn import tree
-import PRF
+#import PRF
 
 from sklearn.neighbors import KNeighborsClassifier
-import autosklearn.classification
+#import autosklearn.classification
 
 
 from util import *
@@ -22,9 +22,9 @@ def DCTracCS_results(dim_images):
 
     methods=["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang"] # "Fahad"
     #methods=["LBP"]
-    #classif=["svm", "rf", "knn"]
+    classif=["svm", "rf", "knn"]
     #classif=["svm", "rf", "prf", "auto"]
-    classif=["auto"]
+    #classif=["auto"]
     times={}
 
     error={}
@@ -77,17 +77,17 @@ def DCTracCS_results(dim_images):
                     #clf = GridSearch(X_train, y_train, debug)
                 elif cl == "knn":
                     clf = KNeighborsClassifier(n_neighbors = 3)
-                elif cl == "prf":
-                    n_trees = 100
-                    cfl = PRF.prf(n_estimators=n_trees, bootstrap=True)
-                elif cl == "auto":
-                    clf = autosklearn.classification.AutoSklearnClassifier(include_preprocessors=["no_preprocessing"])
+                #elif cl == "prf":
+                #    n_trees = 100
+                #    cfl = PRF.prf(n_estimators=n_trees, bootstrap=True)
+                #elif cl == "auto":
+                #    clf = autosklearn.classification.AutoSklearnClassifier(include_preprocessors=["no_preprocessing"])
 
                 # Training classifier
                 clf.fit(X_train, y_train)
-                clf.cv_results_
-                clf.sprint_statistics()
-                clf.show_models()
+                #clf.cv_results_
+                #clf.sprint_statistics()
+                #clf.show_models()
 
                 # Predicting and getting the time
                 start = time.time() ####
@@ -211,9 +211,9 @@ def DCTracCS_results_same_dim(dim_images):
                     #clf = GridSearch(X_train, y_train, debug)
                 elif cl == "knn":
                     clf = KNeighborsClassifier(n_neighbors = 3)
-                elif cl == "prf":
-                    n_trees = 100
-                    cfl = PRF.prf(n_estimators=n_trees, bootstrap=True)
+                #elif cl == "prf":
+                #    n_trees = 100
+                #    cfl = PRF.prf(n_estimators=n_trees, bootstrap=True)
 
                 # Training classifier
                 clf.fit(X_train, y_train)

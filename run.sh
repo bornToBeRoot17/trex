@@ -13,14 +13,14 @@ TRAIN_SIZE=(128)
 TEST_SIZE=(256)
 #CLASSES=("ft" "lu" "map" "allreduce")
 #CLASSES=("multc" "cylinder3d") # "lu" "map" "allreduce")
-CLASSES=("cg" "dt" "mg")
+CLASSES=("bifu" "cyl2d" "multc" "cylinder3d") #"ft" "lu" "map" "allreduce")
 EXTRACTORS=("DCTraCS_RLBP" "DCTraCS_ULBP" "Eerman" "Soysal" "Zhang" "LBP") # "Fahad"
-RESULT_DIR="./results_autosklearn/"
-#PARSER="image_read_dilation"
-PARSER="image_parser"
+PARSER="normal_parser"
+#PARSER="image_parser"
 SCK_PATH="./training_scikit_out/"
-DATASET="/nobackup/ppginf/rgcastro/research/trex_dataset/mpi_dataset/"
-RESULT_SUFIX="article"
+DATASET="../trex_dataset/aug_real_dataset/"
+RESULT_SUFIX="glcm"
+RESULT_DIR="./results_${RESULT_SUFIX}/"
 
 if [ ! -d "${RESULT_DIR}" ]; then
     mkdir ${RESULT_DIR}
