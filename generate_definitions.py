@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from sys import argv, exit
+import os
 
 def generate_sufix(dims, file_sufix):
     sufix = "tr" + dims["train"][0]
@@ -69,6 +70,8 @@ def count_imgs(train_apps):
     return n_max
 
 def generate_definitions(dims, sufix, num_imgs, parser, sck_path, classes, dataset):
+    from random import randint
+
     with open("definitions.ini",'r') as f:
         lstF = f.readlines()
         f.close()
@@ -119,6 +122,25 @@ def generate_definitions(dims, sufix, num_imgs, parser, sck_path, classes, datas
     #n_max = count_imgs(used_apps)
     #exit(-1)
 
+    line_imgs = []
+    if (dims["train"][0] == dims["test"][0]):
+        train_img_num = int((num_imgs+1) * 0.7)
+        for j in range(int(len(used_apps)/2)):
+            aux = []
+            for k in range(train_img_num):
+                rand_int = randint(0,num_imgs)
+                while (rand_int in aux):
+                    rand_int = randint(0,num_imgs)
+                aux.append(rand_int)
+            line_imgs.append(aux)
+
+        for j in range(int(len(used_apps)/2)):
+            aux = []
+            for k in range(num_imgs+1):
+                if (k not in line_imgs[j]):
+                    aux.append(k)
+            line_imgs.append(aux)            
+
     # Configuring [Classes]
     line_classes = []
     for j in range(len(used_apps)):
@@ -127,14 +149,30 @@ def generate_definitions(dims, sufix, num_imgs, parser, sck_path, classes, datas
             if (classes[k] in used_apps[j]):
                 line += str(k+1)
 
-        line += '='
-        for k in range(num_imgs):
-            line += str(k) + ','
-        line += str(num_imgs) + '\n'
-        #if (used_apps[j] in images_balanced):
-        #    line += '=' + images_balanced[used_apps[j]] + '\n'
-        #else:
-        #    line += '=' + images[used_apps[j]] + '\n'
+        if (dims["train"][0] == dims["test"][0]):
+            line += '='
+            for k in range(len(line_imgs[j])):
+                line += str(line_imgs[j][k]) + ','
+            line = line[:-1] + '\n'
+        else:
+            line += '='
+            path, dirs, files = next(os.walk(dataset + used_apps[j]))
+            file_count = len(files) - 1
+
+            aux = []
+            for k in range(num_imgs):
+                rand_int = randint(0,file_count)
+                while (rand_int in aux):
+                    rand_int = randint(0,file_count)
+                line += str(rand_int) + ','
+            rand_int = randint(0,file_count)
+            while (rand_int in aux):
+                rand_int = randint(0,file_count)
+            line += str(rand_int) + '\n'
+            #if (used_apps[j] in images_balanced):
+            #    line += '=' + images_balanced[used_apps[j]] + '\n'
+            #else:
+            #    line += '=' + images[used_apps[j]] + '\n'
 
         line_classes.append(line)
 

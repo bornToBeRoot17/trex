@@ -64,9 +64,12 @@ def lbp(TM, normalize):
 def glcmFeatures(TM):
     from skimage.feature import greycomatrix, greycoprops
     import numpy as np
+    import cv2
+
+    TM = cv2.convertScaleAbs(TM, alpha=(255.0/65535.0))
 
     # Compute some GLCM properties each patch
-    glcm = greycomatrix(TM, distances=[5], angles=[0], levels=TM.shape[0]*TM.shape[1], symmetric=True, normed=True)
+    glcm = greycomatrix(TM, distances=[5], angles=[0], symmetric=True, normed=True)
 
     glcm_values = []
     glcm_values.append(greycoprops(glcm, 'dissimilarity')[0,0])

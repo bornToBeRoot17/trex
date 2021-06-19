@@ -20,7 +20,7 @@ from sys import argv, exit
 def DCTracCS_results(dim_images):
     print('Training classifier...')
 
-    methods=["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang"] # "Fahad"
+    methods=["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang", "GLCM"] # "Fahad"
     #methods=["LBP"]
     classif=["svm", "rf", "knn"]
     #classif=["svm", "rf", "prf", "auto"]
@@ -73,7 +73,14 @@ def DCTracCS_results(dim_images):
                     # cria uma DT
                     clf  = tree.DecisionTreeClassifier()
                 elif cl=="svm":
-                    clf = svm.SVC(kernel='rbf', C=8192.0, gamma=8.0) #
+                    from sklearn.metrics import classification_report
+                    from sklearn.model_selection import GridSearchCV
+
+                    # Set the parameters by cross-validation
+                    tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],'C': [1, 10, 100, 1000]},
+                                        {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}]
+                    clf = GridSearchCV(svm.SVC(), tuned_parameters, scoring='accuracy', n_jobs=-1)
+                    #clf = svm.SVC(kernel='rbf', gamma="auto") #
                     #clf = GridSearch(X_train, y_train, debug)
                 elif cl == "knn":
                     clf = KNeighborsClassifier(n_neighbors = 3)

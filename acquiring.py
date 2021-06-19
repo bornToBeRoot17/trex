@@ -54,11 +54,13 @@ def image_parser(img_path,dim,resize_dim):
 
             TM = [ [ 0 for i in range(h) ] for j in range(w) ]
 
-    for i in range(w):
-        for j in range(h):
-            TM[i][j]=(255-img[i][j])   # Normal colors
-            #TM[i][j]=(255-pix[i,j][0])   # Normal colors
-            #TM[i][j]=(pix[i,j][0])       # Invert colors
+    TM = np.abs(255-img)
+
+    #for i in range(w):
+    #    for j in range(h):
+    #        TM[i][j]=(255-img[i][j])   # Normal colors
+    #        #TM[i][j]=(255-pix[i,j][0])   # Normal colors
+    #        #TM[i][j]=(pix[i,j][0])       # Invert colors
 
     TMs.append(TM)
 
@@ -528,6 +530,7 @@ def normal_parser(img_path,dim,resize_dim):
     
     TMs = []
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE).astype(np.int16)
+    img = cv2.convertScaleAbs(img, alpha=(255.0/65535.0))
 
     TMs.append(img)
 
