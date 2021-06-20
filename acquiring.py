@@ -180,31 +180,69 @@ def image_parser_pooling(TM, img_path):
                 TM[i][j]=(255-pix[i,j][0])
 
 def image_crop(img_path,dim,resize_dim):
-    img = Image.open(img_path)
-    #img = img.filter(ImageFilter.BLUR)
-    #img = ImageOps.invert(img)
-    w, h = img.size
+    import cv2
 
-    new_dim = 32
+    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+    w, h = img.shape
+
+    TMs = []
+
+    new_dim = int(resize_dim[0])
+    if (new_dim == 0): new_dim = w
 
     if (w != new_dim):
-        left   = (w - new_dim)/2
-        top    = (h - new_dim)/2
-        right  = (w + new_dim)/2
-        bottom = (h + new_dim)/2
+        left   = int((w - new_dim)/2)
+        top    = int((h - new_dim)/2)
+        right  = int((w + new_dim)/2)
+        bottom = int((h + new_dim)/2)
+        
+        img = img[top:bottom, left:right]
+        w, h = img.shape
 
-        img = img.crop((left, top, right, bottom))
-        w, h = img.size
+    TM = [ [ 0 for i in range(h) ] for j in range(w) ]
+    TM = np.abs(255-img)
 
-    TM=[ [ 0 for i in range(new_dim) ] for j in range(new_dim) ]
+    #pix = img.load()
+    #for i in range(h):
+    #    for j in range(w):
+    #        TM[i][j]=(255-pix[i,j])
+    #        #TM[i][j]=(pix[i,j])
 
-    pix = img.load()
-    for i in range(new_dim):
-        for j in range(new_dim):
-            TM[i][j]=(255-pix[i,j])
-            #TM[i][j]=(pix[i,j])
+    TMs.append(TM)
 
-    return TM
+    return TMs
+
+#def image_crop(img_path,dim,resize_dim):
+#    img = Image.open(img_path)
+#    #img = img.filter(ImageFilter.BLUR)
+#    #img = ImageOps.invert(img)
+#    w, h = img.size
+#
+#    TMs = []
+#
+#    new_dim = int(resize_dim[0])
+#    if (new_dim == 0): new_dim = w
+#
+#    if (w != new_dim):
+#        left   = (w - new_dim)/2
+#        top    = (h - new_dim)/2
+#        right  = (w + new_dim)/2
+#        bottom = (h + new_dim)/2
+#
+#        img = img.crop((left, top, right, bottom))
+#        w, h = img.size
+#
+#    TM=[ [ 0 for i in range(new_dim) ] for j in range(new_dim) ]
+#
+#    pix = img.load()
+#    for i in range(new_dim):
+#        for j in range(new_dim):
+#            TM[i][j]=(255-pix[i,j])
+#            #TM[i][j]=(pix[i,j])
+#
+#    TMs.append(TM)
+#
+#    return TMs
 
 
 def image_replication(img_path,dim,resize_dim):
