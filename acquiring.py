@@ -35,6 +35,21 @@ def remove_middle_img(img, w, h):
 
     return img
 
+def image_parser_blur(img_path,dim,resize_dim):
+    import cv2
+
+    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+    ksize = (10,10)
+    img = cv2.blur(img, ksize)
+    w, h = img.shape
+
+    TMs = []
+    TM  = [ [ 0 for i in range(h) ] for j in range(w) ]
+    TM  = np.abs(255-img)
+    TMs.append(TM)
+
+    return TMs   
+
 # Converts an image to a TM
 def image_parser(img_path,dim,resize_dim):
     import cv2
