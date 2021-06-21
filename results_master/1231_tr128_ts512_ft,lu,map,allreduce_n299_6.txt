@@ -1,0 +1,101 @@
+Training classifier...
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_ULBP(svm): 97.58% (std=0.00%)
+F1-Score DCTraCS_ULBP(svm): 97.58% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 97.58% (std=0.00%)
+Accuracy DCTraCS_ULBP(rf): 75.58% (std=0.00%)
+F1-Score DCTraCS_ULBP(rf): 67.94% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 75.58% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_RLBP(svm): 99.75% (std=0.00%)
+F1-Score DCTraCS_RLBP(svm): 99.75% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 99.75% (std=0.00%)
+Accuracy DCTraCS_RLBP(rf): 100.00% (std=0.00%)
+F1-Score DCTraCS_RLBP(rf): 100.00% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 100.00% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Soysal(svm): 55.92% (std=0.00%)
+F1-Score Soysal(svm): 51.27% (std=0.00%)
+Recall Soysal(svm): 55.92% (std=0.00%)
+Accuracy Soysal(rf): 74.83% (std=0.00%)
+F1-Score Soysal(rf): 66.58% (std=0.00%)
+Recall Soysal(rf): 74.83% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Zhang(svm): 41.17% (std=0.00%)
+F1-Score Zhang(svm): 34.96% (std=0.00%)
+Recall Zhang(svm): 41.17% (std=0.00%)
+Accuracy Zhang(rf): 64.75% (std=0.00%)
+F1-Score Zhang(rf): 57.96% (std=0.00%)
+Recall Zhang(rf): 64.75% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrixes:
+DCTraCS_ULBP(svm):
+300	0	0	0	
+0	300	0	0	
+0	29	271	0	
+0	0	0	300	
+
+DCTraCS_ULBP(rf):
+300	0	0	0	
+0	300	0	0	
+0	293	7	0	
+0	0	0	300	
+
+> DCTraCS_RLBP(svm):
+300	0	0	0	
+0	298	2	0	
+0	1	299	0	
+0	0	0	300	
+
+DCTraCS_RLBP(rf):
+300	0	0	0	
+0	300	0	0	
+0	0	300	0	
+0	0	0	300	
+
+Soysal(svm):
+72	0	228	0	
+1	299	0	0	
+2	298	0	0	
+0	0	0	300	
+
+Soysal(rf):
+298	0	2	0	
+0	300	0	0	
+0	300	0	0	
+0	0	0	300	
+
+Zhang(svm):
+165	0	135	0	
+0	300	0	0	
+0	300	0	0	
+0	271	0	29	
+
+Zhang(rf):
+297	0	3	0	
+0	238	0	62	
+0	287	0	13	
+0	58	0	242	
+
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_ULBP(svm): 0.04173293
+DCTraCS_ULBP(rf): 0.00259270
+DCTraCS_RLBP(svm): 1.00000000
+DCTraCS_RLBP(rf): 0.00254058
+Soysal(svm): 0.20603558
+Soysal(rf): 0.00134787
+Zhang(svm): 0.20388772
+Zhang(rf): 0.00154423
