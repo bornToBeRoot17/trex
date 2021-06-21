@@ -1,0 +1,237 @@
+Training classifier...
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Accuracy LBP(svm): 73.17% (std=0.00%)
+F1-Score LBP(svm): 65.61% (std=0.00%)
+Recall LBP(svm): 73.17% (std=0.00%)
+Accuracy LBP(rf): 54.92% (std=0.00%)
+F1-Score LBP(rf): 61.90% (std=0.00%)
+Recall LBP(rf): 54.92% (std=0.00%)
+Accuracy LBP(knn): 72.17% (std=0.00%)
+F1-Score LBP(knn): 66.11% (std=0.00%)
+Recall LBP(knn): 72.17% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_ULBP(svm): 90.67% (std=0.00%)
+F1-Score DCTraCS_ULBP(svm): 90.30% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 90.67% (std=0.00%)
+Accuracy DCTraCS_ULBP(rf): 61.17% (std=0.00%)
+F1-Score DCTraCS_ULBP(rf): 54.00% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 61.17% (std=0.00%)
+Accuracy DCTraCS_ULBP(knn): 94.17% (std=0.00%)
+F1-Score DCTraCS_ULBP(knn): 94.08% (std=0.00%)
+Recall DCTraCS_ULBP(knn): 94.17% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_RLBP(svm): 87.58% (std=0.00%)
+F1-Score DCTraCS_RLBP(svm): 86.83% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 87.58% (std=0.00%)
+Accuracy DCTraCS_RLBP(rf): 71.33% (std=0.00%)
+F1-Score DCTraCS_RLBP(rf): 64.15% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 71.33% (std=0.00%)
+Accuracy DCTraCS_RLBP(knn): 83.75% (std=0.00%)
+F1-Score DCTraCS_RLBP(knn): 81.71% (std=0.00%)
+Recall DCTraCS_RLBP(knn): 83.75% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Eerman(svm): 50.00% (std=0.00%)
+F1-Score Eerman(svm): 75.00% (std=0.00%)
+Recall Eerman(svm): 50.00% (std=0.00%)
+Accuracy Eerman(rf): 50.00% (std=0.00%)
+F1-Score Eerman(rf): 75.00% (std=0.00%)
+Recall Eerman(rf): 50.00% (std=0.00%)
+Accuracy Eerman(knn): 50.00% (std=0.00%)
+F1-Score Eerman(knn): 75.00% (std=0.00%)
+Recall Eerman(knn): 50.00% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Soysal(svm): 27.17% (std=0.00%)
+F1-Score Soysal(svm): 16.49% (std=0.00%)
+Recall Soysal(svm): 27.17% (std=0.00%)
+Accuracy Soysal(rf): 27.33% (std=0.00%)
+F1-Score Soysal(rf): 16.77% (std=0.00%)
+Recall Soysal(rf): 27.33% (std=0.00%)
+Accuracy Soysal(knn): 27.75% (std=0.00%)
+F1-Score Soysal(knn): 17.45% (std=0.00%)
+Recall Soysal(knn): 27.75% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Zhang(svm): 31.33% (std=0.00%)
+F1-Score Zhang(svm): 22.62% (std=0.00%)
+Recall Zhang(svm): 31.33% (std=0.00%)
+Accuracy Zhang(rf): 39.92% (std=0.00%)
+F1-Score Zhang(rf): 31.18% (std=0.00%)
+Recall Zhang(rf): 39.92% (std=0.00%)
+Accuracy Zhang(knn): 40.25% (std=0.00%)
+F1-Score Zhang(knn): 31.40% (std=0.00%)
+Recall Zhang(knn): 40.25% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy GLCM(svm): 75.33% (std=0.00%)
+F1-Score GLCM(svm): 73.22% (std=0.00%)
+Recall GLCM(svm): 75.33% (std=0.00%)
+Accuracy GLCM(rf): 66.00% (std=0.00%)
+F1-Score GLCM(rf): 67.36% (std=0.00%)
+Recall GLCM(rf): 66.00% (std=0.00%)
+Accuracy GLCM(knn): 67.00% (std=0.00%)
+F1-Score GLCM(knn): 68.38% (std=0.00%)
+Recall GLCM(knn): 67.00% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrixes:
+LBP(svm):
+271	0	29	0	
+290	7	3	0	
+0	0	300	0	
+0	0	0	300	
+
+LBP(rf):
+60	0	240	0	
+1	299	0	0	
+0	0	300	0	
+0	0	300	0	
+
+LBP(knn):
+244	0	56	0	
+277	22	1	0	
+0	0	300	0	
+0	0	0	300	
+
+DCTraCS_ULBP(svm):
+299	0	1	0	
+4	189	107	0	
+0	0	300	0	
+0	0	0	300	
+
+DCTraCS_ULBP(rf):
+131	0	169	0	
+297	3	0	0	
+0	0	300	0	
+0	0	0	300	
+
+DCTraCS_ULBP(knn):
+295	0	5	0	
+9	235	56	0	
+0	0	300	0	
+0	0	0	300	
+
+> DCTraCS_RLBP(svm):
+281	0	19	0	
+100	170	30	0	
+0	0	300	0	
+0	0	0	300	
+
+DCTraCS_RLBP(rf):
+2	0	298	0	
+0	254	46	0	
+0	0	300	0	
+0	0	0	300	
+
+DCTraCS_RLBP(knn):
+286	0	14	0	
+127	119	54	0	
+0	0	300	0	
+0	0	0	300	
+
+Eerman(svm):
+300	0	0	0	
+300	0	0	0	
+300	0	0	0	
+0	0	0	300	
+
+Eerman(rf):
+300	0	0	0	
+300	0	0	0	
+300	0	0	0	
+0	0	0	300	
+
+Eerman(knn):
+300	0	0	0	
+300	0	0	0	
+300	0	0	0	
+0	0	0	300	
+
+Soysal(svm):
+0	0	300	0	
+0	0	300	0	
+0	0	300	0	
+29	245	0	26	
+
+Soysal(rf):
+0	0	300	0	
+0	0	300	0	
+0	0	300	0	
+33	239	0	28	
+
+Soysal(knn):
+0	0	300	0	
+0	0	300	0	
+0	0	300	0	
+20	247	0	33	
+
+Zhang(svm):
+300	0	0	0	
+300	0	0	0	
+299	1	0	0	
+0	9	215	76	
+
+Zhang(rf):
+300	0	0	0	
+300	0	0	0	
+300	0	0	0	
+0	30	91	179	
+
+Zhang(knn):
+300	0	0	0	
+300	0	0	0	
+300	0	0	0	
+4	8	105	183	
+
+GLCM(svm):
+70	0	230	0	
+0	248	52	0	
+14	0	286	0	
+0	0	0	300	
+
+GLCM(rf):
+122	0	178	0	
+21	207	72	0	
+137	0	163	0	
+0	0	0	300	
+
+GLCM(knn):
+142	0	158	0	
+28	213	59	0	
+151	0	149	0	
+0	0	0	300	
+
+
+
+Fig. 8. Normalized classification time.
+
+LBP(svm): 0.12498856
+LBP(rf): 0.00146930
+LBP(knn): 1.00000000
+DCTraCS_ULBP(svm): 0.10272844
+DCTraCS_ULBP(rf): 0.00040812
+DCTraCS_ULBP(knn): 0.26954103
+DCTraCS_RLBP(svm): 0.00827863
+DCTraCS_RLBP(rf): 0.00068618
+DCTraCS_RLBP(knn): 0.22902979
+Eerman(svm): 0.03952378
+Eerman(rf): 0.00022868
+Eerman(knn): 0.08172805
+Soysal(svm): 0.04120365
+Soysal(rf): 0.00040444
+Soysal(knn): 0.08148310
+Zhang(svm): 0.03222129
+Zhang(rf): 0.00023349
+Zhang(knn): 0.07527236
+GLCM(svm): 0.01225931
+GLCM(rf): 0.00027594
+GLCM(knn): 0.08713983
