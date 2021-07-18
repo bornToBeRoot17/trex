@@ -13,7 +13,8 @@ import shutil
 
 
 # 0. List that contains all methods used in this work
-methods = ["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang", "GLCM"] # "Fahad"
+#methods = ["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Fahad", "Soysal", "Eerman", "Zhang", "GLCM"] # "Fahad"
+methods = ["Fahad", "Soysal", "Eerman"]
 
 def split_dims(dim_lst):
     if ('[' in dim_lst): dim_lst = dim_lst.replace('[','')
@@ -149,9 +150,9 @@ def bkp_feature_extraction(imgs,dim_imgs,i):
     # DCTraCS_RLBP
     write_training_scikit(clnum, rlbp(TM_unscr, True), "DCTraCS_RLBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
     # Eerman
-    write_training_scikit(clnum, eermanFeatures(TM, True), "Eerman", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    #write_training_scikit(clnum, eermanFeatures(TM, True), "Eerman", "class"+str(clnum)+".sck", class_img, dim_imgs)
     # Fahad
-    #write_training_scikit(clnum, fahadFeatures(TM, True), "Fahad", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    write_training_scikit(clnum, fahadFeatures(TM, True), "Fahad", "class"+str(clnum)+".sck", class_img, dim_imgs)
     # Soysal
     write_training_scikit(clnum, soysalFeatures(TM, True), "Soysal", "class"+str(clnum)+".sck", class_img, dim_imgs)
     # Zhang
@@ -175,24 +176,26 @@ def feature_extraction(imgs,dim_imgs,i):
     # 2.3 For each method, run feature extraction process and save in the respective directory
     # Feature extraction (all methods)
     # LBP:
-    write_training_scikit(clnum, lbp(TM_unscr, True), "LBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    #write_training_scikit(clnum, lbp(TM_unscr, True), "LBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
     ## DCTraCS_ULBP:
-    write_training_scikit(clnum, ulbp(TM_unscr, True), "DCTraCS_ULBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    # write_training_scikit(clnum, ulbp(TM_unscr, True), "DCTraCS_ULBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
     ## DCTraCS_RLBP
-    write_training_scikit(clnum, rlbp(TM_unscr, True), "DCTraCS_RLBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    # write_training_scikit(clnum, rlbp(TM_unscr, True), "DCTraCS_RLBP", "class"+str(clnum)+".sck", class_img, dim_imgs)
     ## Eerman
     write_training_scikit(clnum, eermanFeatures(TM, True), "Eerman", "class"+str(clnum)+".sck", class_img, dim_imgs)
     ## Fahad
-    #write_training_scikit(clnum, fahadFeatures(TM, True), "Fahad", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    write_training_scikit(clnum, fahadFeatures(TM, True), "Fahad", "class"+str(clnum)+".sck", class_img, dim_imgs)
     ## Soysal
     write_training_scikit(clnum, soysalFeatures(TM, True), "Soysal", "class"+str(clnum)+".sck", class_img, dim_imgs)
     ## Zhang
-    write_training_scikit(clnum, zhangFeatures(TM, True), "Zhang", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    # write_training_scikit(clnum, zhangFeatures(TM, True), "Zhang", "class"+str(clnum)+".sck", class_img, dim_imgs)
     ## GLCM
-    write_training_scikit(clnum, glcmFeatures(TM), "GLCM", "class"+str(clnum)+".sck", class_img, dim_imgs)
-    
+    # write_training_scikit(clnum, glcmFeatures(TM), "GLCM", "class"+str(clnum)+".sck", class_img, dim_imgs)
+    ## PCA
+    # write_training_scikit(clnum, pca(TM, 4), "PCA", "class"+str(clnum)+".sck", class_img, dim_imgs)
+
+
 
 
 if __name__ == "__main__":
     main(sys.argv)
-

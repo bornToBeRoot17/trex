@@ -1,0 +1,125 @@
+Training classifier...
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_ULBP(svm): 53.50% (std=0.00%)
+F1-Score DCTraCS_ULBP(svm): 55.02% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 53.50% (std=0.00%)
+Accuracy DCTraCS_ULBP(rf): 28.90% (std=0.00%)
+F1-Score DCTraCS_ULBP(rf): 25.75% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 28.90% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_RLBP(svm): 53.29% (std=0.00%)
+F1-Score DCTraCS_RLBP(svm): 54.75% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 53.29% (std=0.00%)
+Accuracy DCTraCS_RLBP(rf): 64.42% (std=0.00%)
+F1-Score DCTraCS_RLBP(rf): 64.58% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 64.42% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy GLCM(svm): 34.49% (std=0.00%)
+F1-Score GLCM(svm): 33.54% (std=0.00%)
+Recall GLCM(svm): 34.49% (std=0.00%)
+Accuracy GLCM(rf): 31.23% (std=0.00%)
+F1-Score GLCM(rf): 24.29% (std=0.00%)
+Recall GLCM(rf): 31.23% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy PCA(svm): 47.15% (std=0.00%)
+F1-Score PCA(svm): 37.88% (std=0.00%)
+Recall PCA(svm): 47.15% (std=0.00%)
+Accuracy PCA(rf): 32.70% (std=0.00%)
+F1-Score PCA(rf): 28.88% (std=0.00%)
+Recall PCA(rf): 32.70% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrixes:
+DCTraCS_ULBP(svm):
+4	0	0	259	0	0	0	
+0	192	0	0	71	0	0	
+0	0	263	0	0	0	0	
+0	0	0	263	0	0	0	
+0	0	0	0	263	0	0	
+0	204	0	0	59	0	0	
+0	0	263	0	0	0	0	
+
+DCTraCS_ULBP(rf):
+4	0	0	259	0	0	0	
+0	122	0	0	6	135	0	
+0	0	0	0	263	0	0	
+0	0	261	2	0	0	0	
+0	0	0	0	263	0	0	
+0	111	0	0	11	141	0	
+0	0	0	0	263	0	0	
+
+> DCTraCS_RLBP(svm):
+4	0	0	259	0	0	0	
+0	188	0	0	75	0	0	
+0	0	263	0	0	0	0	
+0	0	0	263	0	0	0	
+0	0	0	0	263	0	0	
+0	203	0	0	60	0	0	
+0	0	263	0	0	0	0	
+
+DCTraCS_RLBP(rf):
+4	0	0	259	0	0	0	
+0	210	0	0	6	47	0	
+0	0	0	0	263	0	0	
+0	0	0	263	0	0	0	
+0	0	0	0	263	0	0	
+0	65	0	0	11	187	0	
+0	0	0	0	4	0	259	
+
+GLCM(svm):
+0	9	0	0	0	254	0	
+0	197	0	1	28	37	0	
+216	2	0	0	1	44	0	
+0	1	0	0	14	248	0	
+0	0	0	0	263	0	0	
+0	8	0	2	78	175	0	
+0	230	0	0	26	7	0	
+
+GLCM(rf):
+0	33	60	10	0	158	2	
+0	182	3	11	7	56	4	
+205	16	2	6	0	31	3	
+0	218	0	14	2	29	0	
+0	0	0	0	260	3	0	
+0	63	6	28	40	117	9	
+0	206	2	21	9	25	0	
+
+PCA(svm):
+2	254	5	0	2	0	0	
+2	218	12	4	5	18	4	
+0	2	261	0	0	0	0	
+0	30	232	0	0	0	1	
+0	0	0	3	260	0	0	
+4	96	14	9	7	124	9	
+0	235	17	0	0	8	3	
+
+PCA(rf):
+0	7	2	0	4	247	3	
+0	203	1	1	6	49	3	
+0	74	0	0	0	93	96	
+0	253	4	0	0	1	5	
+0	0	0	0	260	3	0	
+0	115	2	0	10	136	0	
+0	40	198	0	0	22	3	
+
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_ULBP(svm): 1.00000000
+DCTraCS_ULBP(rf): 0.00930099
+DCTraCS_RLBP(svm): 0.99784410
+DCTraCS_RLBP(rf): 0.00915252
+GLCM(svm): 0.50833748
+GLCM(rf): 0.00528613
+PCA(svm): 0.44607623
+PCA(rf): 0.00519333

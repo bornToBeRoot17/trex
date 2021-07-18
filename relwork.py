@@ -118,12 +118,18 @@ def fahadFeatures(m, norm):
     return f
 
 def pca(m, norm):
+    import numpy as np
+    np.seterr(divide='ignore', invalid='ignore')
+
     X = m
 
     sc = StandardScaler()
     X_std = sc.fit_transform(X)
 
-    pca = decomposition.PCA(n_components=1)
+    pca = decomposition.PCA(n_components=4)
     X_std_pca = pca.fit_transform(X_std)
 
-    return X_std_pca
+    feat_var = np.var(X_std_pca, axis=0)
+    feat_var_rat = list(np.nan_to_num(feat_var/(np.sum(feat_var))))
+
+    return feat_var_rat

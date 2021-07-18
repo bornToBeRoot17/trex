@@ -1,38 +1,17 @@
 #!/bin/bash
 
-# MODE = 0: train_size resized to test_size; test_size resized to train_size
-# MODE = 1: train/test with no resize, no extraction. Just copy
-# MODE = 2: individually train/test (complete steps), no resize
-# MODE = 3: individually train/test (complete steps), resize test to train
-# MODE = 4: just extraction, no train/test (useful for update extracted paths)
-
-#MODE=3
-##TRAIN_SIZE=(32 64 100 128 200 256 300)
-##TEST_SIZE=(32 64 100 128 200 256 300)
-#TRAIN_SIZE=(128)
-#TEST_SIZE=(256)
-##CLASSES=("ft" "lu" "map" "allreduce")
-##CLASSES=("multc" "cylinder3d") # "lu" "map" "allreduce")
-##CLASSES=("bifu" "cyl2d" "multc" "cylinder3d") #"ft" "lu" "map" "allreduce")
-#CLASSES=("bifu" "cyl2d" "multc") #"ft" "lu" "map" "allreduce")
-#EXTRACTORS=("DCTraCS_RLBP" "DCTraCS_ULBP" "Eerman" "Soysal" "Zhang" "LBP" "GLCM") # "Fahad"
-#PARSER="image_read_dilation"
-#SCK_PATH="./training_scikit_out/"
-#DATASET="../trex_dataset/aug_real_dataset/"
-#RESULT_SUFIX="glcm_resize_dilation"
-#RESULT_DIR="./results_${RESULT_SUFIX}/"
-
-# Synthetic
-MODE=3
+# Real
 TRAIN_SIZE=(128)
 TEST_SIZE=(512)
-CLASSES=("ft" "lu" "map" "allreduce")
-EXTRACTORS=("DCTraCS_RLBP" "DCTraCS_ULBP" "Eerman" "Soysal" "Zhang" "LBP" "GLCM")
+CLASSES=("bifu" "cyl2d") # "multc" "cylinder3d")
+# EXTRACTORS=("DCTraCS_RLBP" "DCTraCS_ULBP" "Fahad" "Soysal" "Eerman")
+EXTRACTORS=("Fahad" "Soysal" "Eerman")
 PARSER="image_parser"
 SCK_PATH="./training_scikit_out/"
-DATASET="../trex_dataset/dataset_synthetic/"
-RESULT_SUFIX="1221"
+DATASET="../trex_dataset/aug_real_dataset/"
+RESULT_SUFIX="treco_three_real_classes_fahad_soysal_eerman"
 RESULT_DIR="./results_master/"
+
 
 if [ ! -d "${RESULT_DIR}" ]; then
     mkdir ${RESULT_DIR}
@@ -95,4 +74,3 @@ for k in `seq 1 10`; do
         done;
     done;
 done;
-

@@ -1,0 +1,93 @@
+Training classifier...
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_ULBP(svm): 34.09% (std=0.00%)
+F1-Score DCTraCS_ULBP(svm): 23.71% (std=0.00%)
+Recall DCTraCS_ULBP(svm): 34.09% (std=0.00%)
+Accuracy DCTraCS_ULBP(rf): 66.67% (std=0.00%)
+F1-Score DCTraCS_ULBP(rf): 83.33% (std=0.00%)
+Recall DCTraCS_ULBP(rf): 66.67% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy DCTraCS_RLBP(svm): 34.73% (std=0.00%)
+F1-Score DCTraCS_RLBP(svm): 24.90% (std=0.00%)
+Recall DCTraCS_RLBP(svm): 34.73% (std=0.00%)
+Accuracy DCTraCS_RLBP(rf): 1.39% (std=0.00%)
+F1-Score DCTraCS_RLBP(rf): 2.11% (std=0.00%)
+Recall DCTraCS_RLBP(rf): 1.39% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy GLCM(svm): 32.95% (std=0.00%)
+F1-Score GLCM(svm): 33.02% (std=0.00%)
+Recall GLCM(svm): 32.95% (std=0.00%)
+Accuracy GLCM(rf): 9.13% (std=0.00%)
+F1-Score GLCM(rf): 12.10% (std=0.00%)
+Recall GLCM(rf): 9.13% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy PCA(svm): 34.47% (std=0.00%)
+F1-Score PCA(svm): 19.05% (std=0.00%)
+Recall PCA(svm): 34.47% (std=0.00%)
+Accuracy PCA(rf): 32.07% (std=0.00%)
+F1-Score PCA(rf): 18.07% (std=0.00%)
+Recall PCA(rf): 32.07% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrixes:
+DCTraCS_ULBP(svm):
+6	257	0	
+0	0	263	
+0	0	263	
+
+DCTraCS_ULBP(rf):
+263	0	0	
+0	0	263	
+0	0	263	
+
+> DCTraCS_RLBP(svm):
+11	252	0	
+0	0	263	
+0	0	263	
+
+DCTraCS_RLBP(rf):
+6	0	257	
+0	5	258	
+0	263	0	
+
+GLCM(svm):
+257	0	6	
+12	0	251	
+260	0	3	
+
+GLCM(rf):
+0	11	252	
+0	58	205	
+224	25	14	
+
+PCA(svm):
+6	0	257	
+0	3	260	
+0	0	263	
+
+PCA(rf):
+6	257	0	
+0	244	19	
+0	260	3	
+
+
+
+Fig. 8. Normalized classification time.
+
+DCTraCS_ULBP(svm): 1.00000000
+DCTraCS_ULBP(rf): 0.01162075
+DCTraCS_RLBP(svm): 0.33375234
+DCTraCS_RLBP(rf): 0.01133324
+GLCM(svm): 0.05894624
+GLCM(rf): 0.00720781
+PCA(svm): 0.12069404
+PCA(rf): 0.00718775

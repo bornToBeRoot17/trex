@@ -48,7 +48,7 @@ def image_parser_blur(img_path,dim,resize_dim):
     TM  = np.abs(255-img)
     TMs.append(TM)
 
-    return TMs   
+    return TMs
 
 # Converts an image to a TM
 def image_parser(img_path,dim,resize_dim):
@@ -62,12 +62,12 @@ def image_parser(img_path,dim,resize_dim):
     #     - Each position holds normalized number of bytes transmitted from TM[line] to TM[col]
     TM = [ [ 0 for i in range(h) ] for j in range(w) ]
 
-    for new_dim in resize_dim:
-        if (w in dim and w != new_dim and new_dim != 0):
-            img = cv2.resize(img, (new_dim,new_dim))
-            w, h = img.shape
-
-            TM = [ [ 0 for i in range(h) ] for j in range(w) ]
+    # for new_dim in resize_dim:
+    #     if (w in dim and w != new_dim and new_dim != 0):
+    #         img = cv2.resize(img, (new_dim,new_dim))
+    #         w, h = img.shape
+    #
+    #         TM = [ [ 0 for i in range(h) ] for j in range(w) ]
 
     TM = np.abs(255-img)
 
@@ -210,7 +210,7 @@ def image_crop(img_path,dim,resize_dim):
         top    = int((h - new_dim)/2)
         right  = int((w + new_dim)/2)
         bottom = int((h + new_dim)/2)
-        
+
         img = img[top:bottom, left:right]
         w, h = img.shape
 
@@ -481,16 +481,16 @@ def image_parser_dilation(img_path,dim,resize_dim):
         kernel = np.zeros((1,1), np.uint8)
 
     img = cv2.dilate(img, kernel, iterations=1)
-    fname = img_path.split('/')[-3]+'_dilation_'+img_path.split('/')[-1]
-    cv2.imwrite('./imgs/'+fname, img)
+    # fname = img_path.split('/')[-3]+'_dilation_'+img_path.split('/')[-1]
+    # cv2.imwrite('./imgs/'+fname, img)
 
     newDim = 100
     if (dim[0] != newDim):
         dim_resize = (newDim, newDim)
 
         img = cv2.resize(img, dim_resize)
-        fname = img_path.split('/')[-3]+'_resize_'+img_path.split('/')[-1]
-        cv2.imwrite('./imgs/'+fname, img)
+        # fname = img_path.split('/')[-3]+'_resize_'+img_path.split('/')[-1]
+        # cv2.imwrite('./imgs/'+fname, img)
 
         #print(img.shape[0], img.shape[1])
 
@@ -580,7 +580,7 @@ def gaussian_pyramid(img_path,dim,resize_dim):
 
 def normal_parser(img_path,dim,resize_dim):
     import cv2
-    
+
     TMs = []
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE).astype(np.int16)
     img = cv2.convertScaleAbs(img, alpha=(255.0/65535.0))
@@ -588,4 +588,3 @@ def normal_parser(img_path,dim,resize_dim):
     TMs.append(img)
 
     return TMs
-

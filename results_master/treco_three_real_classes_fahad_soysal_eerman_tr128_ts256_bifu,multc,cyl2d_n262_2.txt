@@ -1,0 +1,73 @@
+Training classifier...
+
+
+Fig. 5. Accuracy of classifiers.
+
+Cross validation (max=1): [ 1 ]
+Accuracy Fahad(svm): 75.79% (std=0.00%)
+F1-Score Fahad(svm): 75.08% (std=0.00%)
+Recall Fahad(svm): 75.79% (std=0.00%)
+Accuracy Fahad(rf): 89.61% (std=0.00%)
+F1-Score Fahad(rf): 89.52% (std=0.00%)
+Recall Fahad(rf): 89.61% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Soysal(svm): 66.03% (std=0.00%)
+F1-Score Soysal(svm): 62.10% (std=0.00%)
+Recall Soysal(svm): 66.03% (std=0.00%)
+Accuracy Soysal(rf): 65.02% (std=0.00%)
+F1-Score Soysal(rf): 64.09% (std=0.00%)
+Recall Soysal(rf): 65.02% (std=0.00%)
+
+Cross validation (max=1): [ 1 ]
+Accuracy Eerman(svm): 70.14% (std=0.00%)
+F1-Score Eerman(svm): 66.01% (std=0.00%)
+Recall Eerman(svm): 69.88% (std=0.00%)
+Accuracy Eerman(rf): 82.53% (std=0.00%)
+F1-Score Eerman(rf): 82.27% (std=0.00%)
+Recall Eerman(rf): 82.27% (std=0.00%)
+
+Fig. 6. ROC curve of DCTraCS using ULBP and SVM.
+
+
+Fig. 7. Confusion matrixes:
+Fahad(svm):
+263	0	0	
+49	187	27	
+0	115	148	
+
+Fahad(rf):
+263	0	0	
+3	244	16	
+0	63	200	
+
+Soysal(svm):
+263	0	0	
+53	198	12	
+0	203	60	
+
+Soysal(rf):
+263	0	0	
+15	155	93	
+0	168	95	
+
+Eerman(svm):
+263	0	0	
+2	55	197	
+0	30	220	
+
+Eerman(rf):
+263	0	0	
+0	189	65	
+0	69	181	
+
+
+
+Fig. 8. Normalized classification time.
+
+Fahad(svm): 1.00000000
+Fahad(rf): 0.03698426
+Soysal(svm): 0.92938792
+Soysal(rf): 0.03745923
+Eerman(svm): 0.97678984
+Eerman(rf): 0.03663595

@@ -20,9 +20,11 @@ from sys import argv, exit
 def DCTracCS_results(dim_images):
     print('Training classifier...')
 
-    methods=["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang", "GLCM"] # "Fahad"
+    # methods=["DCTraCS_ULBP", "DCTraCS_RLBP", "GLCM", "PCA"] # "Fahad"
+    methods = ["Fahad", "Soysal", "Eerman"]
     #methods=["LBP"]
-    classif=["svm", "rf", "knn"]
+    #methods=["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang", "GLCM"] # "Fahad"
+    classif=["svm", "rf"]
     #classif=["svm", "rf", "prf", "auto"]
     #classif=["auto"]
     times={}
@@ -296,5 +298,3 @@ def main(argv):
 
 if __name__ == "__main__":
     main(argv)
-
-
