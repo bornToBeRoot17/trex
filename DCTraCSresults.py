@@ -20,8 +20,8 @@ from sys import argv, exit
 def DCTracCS_results(dim_images):
     print('Training classifier...')
 
-    # methods=["DCTraCS_ULBP", "DCTraCS_RLBP", "GLCM", "PCA"] # "Fahad"
-    methods = ["Fahad", "Soysal", "Eerman"]
+    methods=["DCTraCS_ULBP", "DCTraCS_RLBP", "GLCM", "PCA"] # "Fahad"
+    #methods = ["Fahad", "Soysal", "Eerman"]
     #methods=["LBP"]
     #methods=["LBP", "DCTraCS_ULBP", "DCTraCS_RLBP", "Eerman", "Soysal", "Zhang", "GLCM"] # "Fahad"
     classif=["svm", "rf"]
