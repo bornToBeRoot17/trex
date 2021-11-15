@@ -39,7 +39,7 @@ def image_parser_blur(img_path,dim,resize_dim):
     import cv2
 
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
-    ksize = (10,10)
+    ksize = (8,8)
     img = cv2.blur(img, ksize)
     w, h = img.shape
 
@@ -62,12 +62,13 @@ def image_parser(img_path,dim,resize_dim):
     #     - Each position holds normalized number of bytes transmitted from TM[line] to TM[col]
     TM = [ [ 0 for i in range(h) ] for j in range(w) ]
 
-    # for new_dim in resize_dim:
-    #     if (w in dim and w != new_dim and new_dim != 0):
-    #         img = cv2.resize(img, (new_dim,new_dim))
-    #         w, h = img.shape
-    #
-    #         TM = [ [ 0 for i in range(h) ] for j in range(w) ]
+    resize_dim = [50]
+    for new_dim in resize_dim:
+        if (w in dim and w != new_dim and new_dim != 0):
+            img = cv2.resize(img, (new_dim,new_dim))
+            w, h = img.shape
+
+            TM = [ [ 0 for i in range(h) ] for j in range(w) ]
 
     TM = np.abs(255-img)
 
@@ -446,8 +447,8 @@ def image_parser_interpolation(img_path,dim,resize_dim):
 
         img = cv2.resize(img, dim_resize)
 
-        fname = img_path.split('/')[-3]+'_'+img_path.split('/')[-1]
-        cv2.imwrite('./imgs/'+fname, img)
+        # fname = img_path.split('/')[-3]+'_'+img_path.split('/')[-1]
+        # cv2.imwrite('./imgs/'+fname, img)
         #print(img.shape[0], img.shape[1])
 
     for i in range(newDim):
@@ -462,6 +463,7 @@ def image_parser_interpolation(img_path,dim,resize_dim):
 
 def image_parser_dilation(img_path,dim,resize_dim):
     import cv2
+    import pdb
 
     TMs = []
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
@@ -476,13 +478,16 @@ def image_parser_dilation(img_path,dim,resize_dim):
 
             if (float(img[i][j]/255) > 0.7): count_black += 1
 
-    kernel = np.ones((1,1), np.uint8)
+    kernel = np.ones((5,5), np.uint8)
     if (count_black > img.shape[0]*img.shape[1]/2):
-        kernel = np.zeros((1,1), np.uint8)
+        kernel = np.zeros((5,5), np.uint8)
 
     img = cv2.dilate(img, kernel, iterations=1)
     # fname = img_path.split('/')[-3]+'_dilation_'+img_path.split('/')[-1]
     # cv2.imwrite('./imgs/'+fname, img)
+
+    print(img_path)
+    pdb.set_trace()
 
     newDim = 100
     if (dim[0] != newDim):
@@ -496,6 +501,8 @@ def image_parser_dilation(img_path,dim,resize_dim):
 
 
     TMs.append(img)
+
+    pdb.set_trace()
 
     return TMs
 
